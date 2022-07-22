@@ -22,6 +22,6 @@ class SelectTamagotchiCollectionViewCell: UICollectionViewCell {
         nameLabel.setDefaultFont()
         
         tamagotchiImageView.image = UIImage(named: data.imageString)
-        nameLabel.text = data.name
+        nameLabel.text = data.type.description
     }
 }

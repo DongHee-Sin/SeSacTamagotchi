@@ -41,7 +41,7 @@ class PopUpViewController: UIViewController {
     func configureInitialUI() {
         if let tamaInfo = tamagotchiInfo {
             tamagotchiImageView.image = UIImage(named: tamaInfo.imageString)
-            nameLabel.text = tamaInfo.name
+            nameLabel.text = tamaInfo.type.description
             nameLabel.setDefaultFont()
             nameLabel.setBorder()
             tamagotchiDescriptionLabel.text = tamaInfo.description
@@ -64,6 +64,9 @@ class PopUpViewController: UIViewController {
     
     
     @IBAction func startButtonTapped(_ sender: UIButton) {
+        // 루트뷰컨 업데이트
+        // UserDefaults로 다마고치를 선택했음을 저장 (Bool)
+        //
     }
     
     

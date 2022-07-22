@@ -7,8 +7,17 @@
 
 import UIKit
 
-enum TamagochiType: Int {
-    case sting, smail, twinkle
+enum TamagochiType: Int, CustomStringConvertible {
+    case sting, smail, twinkle, none
+    
+    var description: String {
+        switch self {
+        case .sting:  return "따끔따끔 다마고치"
+        case .smail:  return "방실방실 다마고치"
+        case .twinkle:  return "반짝반짝 다마고치"
+        case .none: return "준비중이에요"
+        }
+    }
 }
 
 

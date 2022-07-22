@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Select Tamagotchi Collection View Controller-->
+        <!--다마고치 선택하기-->
         <scene sceneID="izv-Bg-Ny0">
             <objects>
                 <collectionViewController storyboardIdentifier="SelectTamagotchiCollectionViewController" id="mHM-69-bTu" customClass="SelectTamagotchiCollectionViewController" customModule="SeSacTamagotchi" customModuleProvider="target" sceneMemberID="viewController">
@@ -65,7 +65,7 @@
                             <outlet property="delegate" destination="mHM-69-bTu" id="fFr-Q4-jUZ"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="irp-lf-HHZ"/>
+                    <navigationItem key="navigationItem" title="다마고치 선택하기" id="irp-lf-HHZ"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ODQ-pu-tSC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
