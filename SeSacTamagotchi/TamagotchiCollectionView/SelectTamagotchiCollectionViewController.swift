@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Toast
 
 class SelectTamagotchiCollectionViewController: UICollectionViewController {
     
@@ -50,7 +51,10 @@ extension SelectTamagotchiCollectionViewController {
     
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard indexPath.row < dataManager.count else { return }
+        guard indexPath.row < dataManager.count else {
+            self.view.makeToast("준비중입니다", duration: 1, position: .center)
+            return
+        }
         
         let sb = UIStoryboard(name: "PopUp", bundle: nil)
         guard let vc = sb.instantiateViewController(withIdentifier: "PopUpViewController") as? PopUpViewController else { return }
