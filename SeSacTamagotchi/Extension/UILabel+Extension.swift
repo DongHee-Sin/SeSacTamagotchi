@@ -11,11 +11,11 @@ import UIKit
 extension UILabel {
     func setDefaultFont() {
         self.font = .systemFont(ofSize: 13, weight: .regular)
-        self.textColor = UIColor(named: "SeSac_LabelBorder")
+        self.textColor = .SeSacLabelBorder
     }
     
     func setNavigationTitleFont() {
         self.font = .systemFont(ofSize: 15, weight: .medium)
-        self.textColor = UIColor(named: "SeSac_LabelBorder")
+        self.textColor = .SeSacLabelBorder
     }
 }
