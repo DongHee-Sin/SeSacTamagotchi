@@ -7,10 +7,12 @@
 
 import UIKit
 
-
 extension UIView {
-    func setBorder() {
-        self.layer.borderColor = UIColor.SeSacLabelBorder.cgColor
-        self.layer.borderWidth = 1
+    func setBackgroundColor() {
+        self.backgroundColor = .SeSacBackground
+    }
+    
+    func setLineColor() {
+        self.backgroundColor = .SeSacLabelBorder
     }
 }

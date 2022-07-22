@@ -31,8 +31,6 @@ struct TamagotchiCollectionViewManager {
             TamagotchiCellInfo(name: "방실방실 다마고치", imageString: "2-6", description: "방실방실 다마고치입니당 키는 100km 몸무게는 150톤이에용\n성격은 화끈하고 날아다닙니다~\n열심히 잘 먹고 잘 클 자신\n있습니당~ 방실!~!"),
             TamagotchiCellInfo(name: "반짝반짝 다마고치", imageString: "3-6", description: "반짝반짝 다마고치입니당~ 키는 1cm 몸무게는 1g입니당~\n 겁나게 작지만 겁나 반짝거려서 잘 보입니당~\n저는 크로와상을 참 좋아합니당~\n입맛이 좀 까다로운 편입니당~")
         ]
-        
-        tamagotchiList.append(contentsOf: Array(repeating: defaultCell, count: 20-tamagotchiList.count))
     }
     
     func getTamagotchiCellInfo(at index: Int) -> TamagotchiCellInfo {

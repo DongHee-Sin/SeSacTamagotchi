@@ -34,7 +34,7 @@ class SelectTamagotchiCollectionViewController: UICollectionViewController {
 // MARK: - CollectionView
 extension SelectTamagotchiCollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return dataManager.count
+        return dataManager.count >= 20 ? dataManager.count : 20
     }
     
     
@@ -46,6 +46,19 @@ extension SelectTamagotchiCollectionViewController {
         cell.configureCellUI(data: dataManager.getTamagotchiCellInfo(at: indexPath.row))
         
         return cell
+    }
+    
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard indexPath.row < dataManager.count else { return }
+        
+        let sb = UIStoryboard(name: "PopUp", bundle: nil)
+        guard let vc = sb.instantiateViewController(withIdentifier: "PopUpViewController") as? PopUpViewController else { return }
+        
+        vc.tamagotchiInfo = dataManager.getTamagotchiCellInfo(at: indexPath.row)
+        vc.modalPresentationStyle = .overFullScreen
+        
+        present(vc, animated: true)
     }
     
     
