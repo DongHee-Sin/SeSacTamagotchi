@@ -7,7 +7,7 @@
 
 import UIKit
 
-enum TamagochiType: Int, CustomStringConvertible {
+enum TamagochiType: Int, CustomStringConvertible, Codable {
     case sting, smail, twinkle, none
     
     var description: String {
@@ -21,7 +21,7 @@ enum TamagochiType: Int, CustomStringConvertible {
 }
 
 
-struct Tamagochi {
+struct Tamagochi: Codable {
     var type: TamagochiType
     var rice: Int = 0
     var water: Int = 0

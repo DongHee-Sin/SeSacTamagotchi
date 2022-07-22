@@ -10,7 +10,10 @@ import Toast
 
 class SelectTamagotchiCollectionViewController: UICollectionViewController {
     
+    // MARK: - Propertys
     var dataManager = TamagotchiCollectionViewManager()
+    
+    var isInitialView: Bool = true
     
     
     // MARK: - View Did Load
@@ -27,6 +30,8 @@ class SelectTamagotchiCollectionViewController: UICollectionViewController {
         self.collectionView.backgroundColor = .SeSacBackground
         
         collectionView.collectionViewLayout = configureCollectionViewLayout()
+        
+        self.navigationItem.title = isInitialView ? "다마고치 선택하기" : "다마고치 변경하기"
     }
 }
 
