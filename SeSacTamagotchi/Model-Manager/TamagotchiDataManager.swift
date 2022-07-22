@@ -54,14 +54,14 @@ class TamagotchiDataManager {
         self.userName = UserDefaultManager.shared.userName
     }
     
-    
+    // ⭐️ 값이 오를 때마다 LV이 올랐는지 여부를 확인할 함수 필요
     func giveRice(count: Int) {
         guard count < 100 else {return}
         
         tamagochi.rice += count
     }
     
-    
+    // ⭐️ 값이 오를 때마다 LV이 올랐는지 여부를 확인할 함수 필요
     func giveWater(count: Int) {
         guard count < 50 else {return}
         
@@ -89,6 +89,21 @@ class TamagotchiDataManager {
     
     func getSpeechBubbleText() -> String {
         return speechBubbleList.randomElement() ?? "저런,, 기본값 말풍선이 나왔네요. 뭐가 문제인지 찾아보세요."
+    }
+    
+    
+    func getTamagotchiName() -> String {
+        return tamagochi.type.description
+    }
+    
+    
+    func getUserName() -> String {
+        return userName
+    }
+    
+    
+    func getTamagotchiInfo() -> String {
+        return "LV\(tamagochi.level) · 밥알\(tamagochi.rice)개 · 물방울\(tamagochi.water)개"
     }
     
     

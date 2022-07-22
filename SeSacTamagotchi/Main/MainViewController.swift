@@ -48,6 +48,7 @@ class MainViewController: UIViewController {
         setImage()
         setNavigationBar()
         setLabel()
+        updateTamagotchiInfoLabel()
     }
     
     
@@ -75,7 +76,7 @@ class MainViewController: UIViewController {
     
     
     func setNavigationBar() {
-        self.navigationItem.title = "\(UserDefaultManager.shared.userName)님의 다마고치"
+        self.navigationItem.title = "\(tamagotchiManager.getUserName())님의 다마고치"
     }
     
     
@@ -87,5 +88,14 @@ class MainViewController: UIViewController {
     func setLabel() {
         speechBubbleLabel.text = tamagotchiManager.getSpeechBubbleText()
         speechBubbleLabel.setDefaultFont()
+        
+        nameLabel.setDefaultFont()
+        nameLabel.setBorder()
+        nameLabel.text = tamagotchiManager.getTamagotchiName()
+    }
+    
+    
+    func updateTamagotchiInfoLabel() {
+        tamagotchiInfoLabel.text = tamagotchiManager.getTamagotchiInfo()
     }
 }
