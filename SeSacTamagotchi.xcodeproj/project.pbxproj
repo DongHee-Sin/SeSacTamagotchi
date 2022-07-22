@@ -15,6 +15,7 @@
 		D04DDC9C288AC739000A27A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D04DDC9B288AC739000A27A0 /* Main.storyboard */; };
 		D04DDC9E288ACB9C000A27A0 /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04DDC9D288ACB9C000A27A0 /* UserDefaultManager.swift */; };
 		D082FF51288AECCA00BE065D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D082FF50288AECCA00BE065D /* MainViewController.swift */; };
+		D082FF53288AF2DA00BE065D /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D082FF52288AF2DA00BE065D /* UIViewController+Extension.swift */; };
 		D0F37051288A6E0E00E01182 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F37050288A6E0E00E01182 /* AppDelegate.swift */; };
 		D0F37053288A6E0E00E01182 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F37052288A6E0E00E01182 /* SceneDelegate.swift */; };
 		D0F37058288A6E0E00E01182 /* Selection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0F37056288A6E0E00E01182 /* Selection.storyboard */; };
@@ -35,6 +36,7 @@
 		D04DDC9B288AC739000A27A0 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		D04DDC9D288ACB9C000A27A0 /* UserDefaultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultManager.swift; sourceTree = "<group>"; };
 		D082FF50288AECCA00BE065D /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		D082FF52288AF2DA00BE065D /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		D0F3704D288A6E0E00E01182 /* SeSacTamagotchi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeSacTamagotchi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0F37050288A6E0E00E01182 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D0F37052288A6E0E00E01182 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 				D0F37066288A702500E01182 /* UILabel+Extension.swift */,
 				D0F3706E288A876D00E01182 /* UIColor+Extension.swift */,
 				D04DDC96288AB71F000A27A0 /* UIView+Extension.swift */,
+				D082FF52288AF2DA00BE065D /* UIViewController+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -133,8 +136,8 @@
 		D0F37070288A8DD400E01182 /* Model-Manager */ = {
 			isa = PBXGroup;
 			children = (
-				D0F3706C288A81F200E01182 /* TamagotchiDataManager.swift */,
 				D04DDC8F288AA513000A27A0 /* TamagotchiCellManager.swift */,
+				D0F3706C288A81F200E01182 /* TamagotchiDataManager.swift */,
 				D04DDC9D288ACB9C000A27A0 /* UserDefaultManager.swift */,
 			);
 			path = "Model-Manager";
@@ -230,6 +233,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0F3706F288A876D00E01182 /* UIColor+Extension.swift in Sources */,
+				D082FF53288AF2DA00BE065D /* UIViewController+Extension.swift in Sources */,
 				D0F37067288A702500E01182 /* UILabel+Extension.swift in Sources */,
 				D04DDC90288AA513000A27A0 /* TamagotchiCellManager.swift in Sources */,
 				D082FF51288AECCA00BE065D /* MainViewController.swift in Sources */,

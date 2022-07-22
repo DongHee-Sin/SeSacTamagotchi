@@ -21,6 +21,7 @@ enum TamagochiType: Int, CustomStringConvertible, Codable {
 }
 
 
+
 struct Tamagochi: Codable {
     var type: TamagochiType
     var rice: Int = 0
@@ -29,33 +30,71 @@ struct Tamagochi: Codable {
 }
 
 
-struct TamagochiDataManager {
-    private var tamagochi: Tamagochi
+
+class TamagotchiDataManager {
     
-    init(tamagochiType: TamagochiType) {
-        self.tamagochi = Tamagochi(type: tamagochiType)
+    private var tamagochi: Tamagochi
+    private var userName: String
+    
+    
+    lazy var speechBubbleList: [String] = [
+        "\(userName)님 커밋 푸시 하셨나요?",
+        "복습 아직 안하셨다구요? 지금 잠이 오세요? \(userName)님???",
+        "\(userName)님! 과제할 시간이네요!",
+        "\(userName)님 잠은 죽어서 자는것도 나쁘지 않을 것 같아요.",
+        "전 아직 배고파요 \(userName)님 먹을걸 더 주세요",
+        "테이블뷰컨트롤러와 뷰컨트롤러는 어떤 차이가 있을까요?",
+        "\(userName)님, 야식 메뉴로는 어떤게 좋을까요?",
+        "배불러요..!! 그만 먹이세요",
+    ]
+    
+    
+    init() {
+        self.tamagochi = UserDefaultManager.shared.tamagotchi
+        self.userName = UserDefaultManager.shared.userName
     }
     
-    mutating func giveRice(count: Int) {
+    
+    func giveRice(count: Int) {
         guard count < 100 else {return}
         
         tamagochi.rice += count
     }
     
-    mutating func giveWater(count: Int) {
+    
+    func giveWater(count: Int) {
         guard count < 50 else {return}
         
         tamagochi.water += count
     }
     
-    mutating func changeType(to newType: TamagochiType) {
+    
+    func changeType(to newType: TamagochiType) {
         tamagochi.type = newType
     }
+    
     
     func getImage() -> UIImage {
         let typeNumber: Int = tamagochi.type.rawValue
         let level: Int = tamagochi.level > 9 ? 9 : tamagochi.level
         
         return UIImage(named: "\(typeNumber)-\(level)") ?? UIImage()
+    }
+    
+    
+    func updateDataBasedUserDefaults(data: Tamagochi) {
+        self.tamagochi = data
+    }
+    
+    
+    func getSpeechBubbleText() -> String {
+        return speechBubbleList.randomElement() ?? "저런,, 기본값 말풍선이 나왔네요. 뭐가 문제인지 찾아보세요."
+    }
+    
+    
+    
+    // MARK: - deinit
+    deinit {
+        UserDefaultManager.shared.tamagotchi = self.tamagochi
     }
 }

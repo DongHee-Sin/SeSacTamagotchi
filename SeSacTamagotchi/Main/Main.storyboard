@@ -17,16 +17,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FzM-EU-YCs">
-                                <rect key="frame" x="75" y="158" width="264" height="176"/>
+                                <rect key="frame" x="42" y="114" width="330" height="220"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bubble" translatesAutoresizingMaskIntoConstraints="NO" id="rnC-mI-8Kt">
-                                        <rect key="frame" x="0.0" y="0.0" width="264" height="176"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="330" height="220"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="rnC-mI-8Kt" secondAttribute="height" multiplier="27:18" id="N8P-ty-5Oc"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ps5-fG-318">
-                                        <rect key="frame" x="20" y="30" width="224" height="106"/>
+                                        <rect key="frame" x="20" y="30" width="290" height="150"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -144,28 +144,22 @@
                     <navigationItem key="navigationItem" title="TITLE" id="1wj-ys-XDk">
                         <barButtonItem key="rightBarButtonItem" image="person.circle" catalog="system" id="JFj-WI-ALs"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="giveRiceButton" destination="Nur-vZ-hcU" id="tm0-rj-dNL"/>
+                        <outlet property="giveWaterButton" destination="Llz-Jd-3kc" id="LjQ-qb-FDm"/>
+                        <outlet property="nameLabel" destination="prc-JP-xFE" id="Y6m-Ct-oUT"/>
+                        <outlet property="riceTextField" destination="rn0-K4-g73" id="fPO-Cy-vrt"/>
+                        <outlet property="speechBubbleLabel" destination="ps5-fG-318" id="TY2-Fg-e7w"/>
+                        <outlet property="tamagotchiImage" destination="gFK-zT-kuO" id="DYm-Ri-MBY"/>
+                        <outlet property="tamagotchiInfoLabel" destination="CbG-2H-gR5" id="0UE-LZ-AE7"/>
+                        <outlet property="waterTextField" destination="j2n-Cc-cyj" id="plp-An-Jta"/>
+                        <outletCollection property="lineViews" destination="Eok-xR-dpf" collectionClass="NSMutableArray" id="Sbc-Qr-Ife"/>
+                        <outletCollection property="lineViews" destination="42Q-w9-36a" collectionClass="NSMutableArray" id="3br-79-YQT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="111.83035714285714"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="34I-ce-tTu">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mJU-yx-cZg" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="JuS-x3-bI7">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="Tbl-b0-J05"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="pP5-rP-yXh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-194" y="112"/>
         </scene>
     </scenes>
     <resources>

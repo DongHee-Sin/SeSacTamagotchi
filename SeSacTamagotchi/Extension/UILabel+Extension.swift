@@ -9,9 +9,6 @@ import UIKit
 
 
 extension UILabel {
-    func addInset() {
-        
-    }
     
     func setDefaultFont() {
         self.font = .systemFont(ofSize: 13, weight: .medium)
