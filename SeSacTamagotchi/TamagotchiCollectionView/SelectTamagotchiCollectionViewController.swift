@@ -9,7 +9,7 @@ import UIKit
 
 class SelectTamagotchiCollectionViewController: UICollectionViewController {
     
-    var dataManager: TamagochiDataManager!
+    var dataManager = TamagotchiCollectionViewManager()
     
     
     // MARK: - View Did Load
@@ -34,7 +34,7 @@ class SelectTamagotchiCollectionViewController: UICollectionViewController {
 // MARK: - CollectionView
 extension SelectTamagotchiCollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+        return dataManager.count
     }
     
     
@@ -43,6 +43,8 @@ extension SelectTamagotchiCollectionViewController {
             return UICollectionViewCell()
         }
         
+        cell.configureCellUI(data: dataManager.getTamagotchiCellInfo(at: indexPath.row))
+        
         return cell
     }
     
@@ -50,15 +52,15 @@ extension SelectTamagotchiCollectionViewController {
     func configureCollectionViewLayout() -> UICollectionViewLayout {
         let layout = UICollectionViewFlowLayout()
         
-        let spacing: CGFloat = 16
+        let spacing: CGFloat = 20
         let itemWidth: CGFloat = UIScreen.main.bounds.width - (spacing * 4)
-        let itemHeight: CGFloat = itemWidth * 1.2
+        let itemHeight: CGFloat = itemWidth * 1.3
         
         layout.itemSize = CGSize(width: itemWidth / 3, height: itemHeight / 3)
-        layout.sectionInset = UIEdgeInsets(top: spacing, left: spacing, bottom: spacing, right: spacing)
-        layout.minimumInteritemSpacing = spacing
-        layout.minimumLineSpacing = spacing
         layout.scrollDirection = .vertical
+        layout.sectionInset = UIEdgeInsets(top: spacing, left: spacing, bottom: spacing, right: spacing)
+        layout.minimumLineSpacing = spacing
+        layout.minimumInteritemSpacing = spacing
         
         return layout
     }
