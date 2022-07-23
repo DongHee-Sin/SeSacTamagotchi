@@ -50,19 +50,19 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="prc-JP-xFE">
-                                <rect key="frame" x="186.5" y="592" width="41.5" height="20.5"/>
+                                <rect key="frame" x="186.5" y="582" width="41.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CbG-2H-gR5">
-                                <rect key="frame" x="186.5" y="642.5" width="41.5" height="20.5"/>
+                                <rect key="frame" x="186.5" y="622.5" width="41.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="iaw-Eq-vuN">
-                                <rect key="frame" x="62" y="693" width="290" height="35"/>
+                                <rect key="frame" x="62" y="673" width="290" height="35"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="X6E-Ju-n8n">
                                         <rect key="frame" x="0.0" y="0.0" width="219.5" height="35"/>
@@ -85,11 +85,14 @@
                                         <rect key="frame" x="229.5" y="0.0" width="60.5" height="35"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="gray" title="밥먹기"/>
+                                        <connections>
+                                            <action selector="giveRiceButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="PVV-EK-7Mr"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="yB5-JE-LjT">
-                                <rect key="frame" x="62" y="753" width="290" height="35"/>
+                                <rect key="frame" x="62" y="733" width="290" height="35"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="9Sy-0b-dng">
                                         <rect key="frame" x="0.0" y="0.0" width="219.5" height="35"/>
@@ -112,6 +115,9 @@
                                         <rect key="frame" x="229.5" y="0.0" width="60.5" height="35"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="gray" title="밥먹기"/>
+                                        <connections>
+                                            <action selector="giveWaterButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="zi7-PJ-EFc"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -130,12 +136,12 @@
                             <constraint firstItem="gFK-zT-kuO" firstAttribute="top" secondItem="FzM-EU-YCs" secondAttribute="bottom" id="NOl-AT-zLP"/>
                             <constraint firstItem="prc-JP-xFE" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="NRX-Rk-iE1"/>
                             <constraint firstItem="gFK-zT-kuO" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="SJ0-go-Vdh"/>
-                            <constraint firstItem="prc-JP-xFE" firstAttribute="top" secondItem="gFK-zT-kuO" secondAttribute="bottom" constant="30" id="UDl-sc-tyM"/>
+                            <constraint firstItem="prc-JP-xFE" firstAttribute="top" secondItem="gFK-zT-kuO" secondAttribute="bottom" constant="20" id="UDl-sc-tyM"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="CbG-2H-gR5" secondAttribute="trailing" constant="30" id="YEf-xn-Vjc"/>
                             <constraint firstItem="yB5-JE-LjT" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="bPb-XV-ORK"/>
                             <constraint firstItem="CbG-2H-gR5" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="bsQ-Z2-uYG"/>
                             <constraint firstItem="iaw-Eq-vuN" firstAttribute="top" secondItem="CbG-2H-gR5" secondAttribute="bottom" constant="30" id="eZE-Tr-1E7"/>
-                            <constraint firstItem="CbG-2H-gR5" firstAttribute="top" secondItem="prc-JP-xFE" secondAttribute="bottom" constant="30" id="iXL-7I-uUh"/>
+                            <constraint firstItem="CbG-2H-gR5" firstAttribute="top" secondItem="prc-JP-xFE" secondAttribute="bottom" constant="20" id="iXL-7I-uUh"/>
                             <constraint firstItem="iaw-Eq-vuN" firstAttribute="width" secondItem="vDu-zF-Fre" secondAttribute="width" multiplier="0.7" id="r10-wb-k4u"/>
                             <constraint firstItem="yB5-JE-LjT" firstAttribute="top" secondItem="iaw-Eq-vuN" secondAttribute="bottom" constant="25" id="trC-38-shY"/>
                             <constraint firstItem="prc-JP-xFE" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="30" id="zVl-bv-01U"/>

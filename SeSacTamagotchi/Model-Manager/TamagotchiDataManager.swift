@@ -41,7 +41,7 @@ class TamagotchiDataManager {
         "\(userName)님 커밋 푸시 하셨나요?",
         "복습 아직 안하셨다구요? 지금 잠이 오세요? \(userName)님???",
         "\(userName)님! 과제할 시간이네요!",
-        "\(userName)님 잠은 죽어서 자는것도 나쁘지 않을 것 같아요.",
+        "\(userName)님 잠은 죽어서 자는 것도 나쁘지 않을 것 같아요.",
         "전 아직 배고파요 \(userName)님 먹을걸 더 주세요",
         "테이블뷰컨트롤러와 뷰컨트롤러는 어떤 차이가 있을까요?",
         "\(userName)님, 야식 메뉴로는 어떤게 좋을까요?",
@@ -55,17 +55,45 @@ class TamagotchiDataManager {
     }
     
     // ⭐️ 값이 오를 때마다 LV이 올랐는지 여부를 확인할 함수 필요
-    func giveRice(count: Int) {
-        guard count < 100 else {return}
-        
+    // 1. 값이 오르면, LV 업데이트
+    // 2-1 : LV이 올랐을 때, 핸들러 함수로 업데이트 처리
+    // 2-2 : 밥과 물을 줄 때마다 ViewController에서 밥,물,레벨,이미지 업데이트 처리
+    func giveRice(count: Int, delegate: PresentAlertDelegate) {
+        guard count < 100 else {
+            delegate.presentAlert(message: "100개 이상의 밥은 한 번에 먹을 수 없어요!")
+            return
+        }
+        updateLevel()
         tamagochi.rice += count
     }
     
     // ⭐️ 값이 오를 때마다 LV이 올랐는지 여부를 확인할 함수 필요
-    func giveWater(count: Int) {
-        guard count < 50 else {return}
-        
+    func giveWater(count: Int, delegate: PresentAlertDelegate) {
+        guard count < 50 else {
+            delegate.presentAlert(message: "50개 이상의 물은 한 번에 먹을 수 없어요!")
+            return
+        }
+        updateLevel()
         tamagochi.water += count
+    }
+    
+    
+    func updateLevel() {
+        let energyValue = (Double(tamagochi.rice) / 5) + (Double(tamagochi.water) / 2)
+        
+        switch energyValue {
+        case 0..<20: tamagochi.level = 1
+        case 20..<30: tamagochi.level = 2
+        case 30..<40: tamagochi.level = 3
+        case 40..<50: tamagochi.level = 4
+        case 50..<60: tamagochi.level = 5
+        case 60..<70: tamagochi.level = 6
+        case 70..<80: tamagochi.level = 7
+        case 80..<90: tamagochi.level = 8
+        case 90..<100: tamagochi.level = 9
+        case 100...: tamagochi.level = 10
+        default: break
+        }
     }
     
     
@@ -88,7 +116,11 @@ class TamagotchiDataManager {
     
     
     func getSpeechBubbleText() -> String {
-        return speechBubbleList.randomElement() ?? "저런,, 기본값 말풍선이 나왔네요. 뭐가 문제인지 찾아보세요."
+        if tamagochi.level >= 10 {
+            return "저는 다 자랐어요. 이제 독립할거에요."
+        }else {
+            return speechBubbleList.randomElement() ?? "저런,, 기본값 말풍선이 나왔네요. 뭐가 문제인지 찾아보세요."
+        }
     }
     
     
@@ -103,7 +135,7 @@ class TamagotchiDataManager {
     
     
     func getTamagotchiInfo() -> String {
-        return "LV\(tamagochi.level) · 밥알\(tamagochi.rice)개 · 물방울\(tamagochi.water)개"
+        return "LV \(tamagochi.level) · 밥알 \(tamagochi.rice)개 · 물방울 \(tamagochi.water)개"
     }
     
     

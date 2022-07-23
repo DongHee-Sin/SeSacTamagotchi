@@ -7,6 +7,13 @@
 
 import UIKit
 
+
+
+protocol PresentAlertDelegate {
+    func presentAlert(message: String)
+}
+
+
 class MainViewController: UIViewController {
 
     // MARK: - Property
@@ -56,6 +63,7 @@ class MainViewController: UIViewController {
         [riceTextField, waterTextField].forEach {
             $0?.borderStyle = .none
             $0?.textAlignment = .center
+            $0?.keyboardType = .numberPad
         }
         riceTextField.placeholder = "밥주세용"
         waterTextField.placeholder = "물주세용"
@@ -80,22 +88,56 @@ class MainViewController: UIViewController {
     }
     
     
-    func setImage() {
-        tamagotchiImage.image = tamagotchiManager.getImage()
-    }
-    
-    
     func setLabel() {
         speechBubbleLabel.text = tamagotchiManager.getSpeechBubbleText()
         speechBubbleLabel.setDefaultFont()
+        speechBubbleLabel.numberOfLines = 0
         
-        nameLabel.setDefaultFont()
+        nameLabel.setBoldFont()
         nameLabel.setBorder()
         nameLabel.text = tamagotchiManager.getTamagotchiName()
+        
+        tamagotchiInfoLabel.setBoldFont()
+    }
+    
+    
+    func updateAfterGiving() {
+        setImage()
+        updateTamagotchiInfoLabel()
     }
     
     
     func updateTamagotchiInfoLabel() {
         tamagotchiInfoLabel.text = tamagotchiManager.getTamagotchiInfo()
+    }
+    
+    
+    func setImage() {
+        tamagotchiImage.image = tamagotchiManager.getImage()
+    }
+    
+    
+    @IBAction func giveRiceButtonTapped(_ sender: UIButton) {
+        tamagotchiManager.giveRice(count: Int(riceTextField.text ?? "") ?? 1, delegate: self)
+        updateAfterGiving()
+    }
+    
+    
+    @IBAction func giveWaterButtonTapped(_ sender: UIButton) {
+        tamagotchiManager.giveWater(count: Int(waterTextField.text ?? "") ?? 1, delegate: self)
+        updateAfterGiving()
+    }
+    
+}
+
+
+
+extension MainViewController: PresentAlertDelegate {
+    func presentAlert(message: String) {
+        let alertController = UIAlertController(title: message, message: nil, preferredStyle: .alert)
+        let action = UIAlertAction(title: "넹", style: .default)
+        alertController.addAction(action)
+        
+        present(alertController, animated: true)
     }
 }
