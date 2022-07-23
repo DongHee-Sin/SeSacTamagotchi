@@ -7,8 +7,6 @@
 
 import UIKit
 
-
-
 protocol PresentAlertDelegate {
     func presentAlert(message: String)
 }
@@ -19,6 +17,7 @@ protocol UserNameDelegate {
     
     func changeUserName(to newName: String)
 }
+
 
 
 class MainViewController: UIViewController {

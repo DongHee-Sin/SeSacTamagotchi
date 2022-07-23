@@ -12,6 +12,8 @@ class PopUpViewController: UIViewController {
     // MARK: - Propertys
     var tamagotchiInfo: TamagotchiCellInfo?
     
+    var isInitialView: Bool = true
+    
     
     // MARK: - Outlet
     @IBOutlet weak var popUpBackgroundView: UIView!
@@ -55,6 +57,9 @@ class PopUpViewController: UIViewController {
         lineViews.forEach { $0.setLineColor() }
         
         setButtonStyle()
+        
+        let title = isInitialView ? "시작하기" : "변경하기"
+        startButton.setTitle(title, for: .normal)
     }
     
     
@@ -64,9 +69,6 @@ class PopUpViewController: UIViewController {
     
     
     @IBAction func startButtonTapped(_ sender: UIButton) {
-        // 루트뷰컨 업데이트
-        // UserDefaults로 다마고치를 선택했음을 저장 (Bool)
-        //
         let sb = UIStoryboard(name: "Main", bundle: nil)
         guard let vc = sb.instantiateViewController(withIdentifier: "MainViewController") as? MainViewController else {
             return

@@ -32,6 +32,9 @@ class SelectTamagotchiCollectionViewController: UICollectionViewController {
         collectionView.collectionViewLayout = configureCollectionViewLayout()
         
         self.navigationItem.title = isInitialView ? "다마고치 선택하기" : "다마고치 변경하기"
+        if !isInitialView {
+            self.navigationController?.navigationBar.tintColor = .SeSacLabelBorder
+        }
     }
 }
 
@@ -66,6 +69,7 @@ extension SelectTamagotchiCollectionViewController {
         
         vc.tamagotchiInfo = dataManager.getTamagotchiCellInfo(at: indexPath.row)
         vc.modalPresentationStyle = .overFullScreen
+        vc.isInitialView = self.isInitialView
         
         present(vc, animated: true)
     }

@@ -78,7 +78,13 @@ class SettingTableViewController: UITableViewController {
             }
             vc.delegate = self.delegate
             self.navigationController?.pushViewController(vc, animated: true)
-        case 1: break    // 다마고치 변경
+        case 1:
+            let sb = UIStoryboard(name: "Selection", bundle: nil)
+            guard let vc = sb.instantiateViewController(withIdentifier: "SelectTamagotchiCollectionViewController") as? SelectTamagotchiCollectionViewController else {
+                return
+            }
+            vc.isInitialView = false
+            self.navigationController?.pushViewController(vc, animated: true)
         case 2: break    // 데이터 초기화
         default: break
         }
