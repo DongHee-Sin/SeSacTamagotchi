@@ -34,7 +34,8 @@ class RenameViewController: UIViewController {
         renameTextField.placeholder = "대장님 이름을 알려주세요!"
         renameTextField.text = delegate?.userName
         renameTextField.borderStyle = .none
-        renameTextField.tintColor = .SeSacLabelBorder
+        renameTextField.textColor = .SeSacLabelBorder
+        renameTextField.font = .systemFont(ofSize: 15)
         
         lineView.backgroundColor = .SeSacLabelBorder
         

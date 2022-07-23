@@ -52,6 +52,7 @@ class PopUpViewController: UIViewController {
             tamagotchiDescriptionLabel.textAlignment = .center
         }
         
+        popUpBackgroundView.clipsToBounds = true
         popUpBackgroundView.layer.cornerRadius = popUpBackgroundView.frame.height / 15
         popUpBackgroundView.setBackgroundColor()
         
@@ -86,6 +87,7 @@ class PopUpViewController: UIViewController {
     
     
     func setButtonStyle() {
+        cancelButton.backgroundColor = UIColor(red: 220/255, green: 240/255, blue: 240/255, alpha: 1)
         cancelButton.tintColor = .SeSacLabelBorder
         startButton.tintColor = .SeSacLabelBorder
     }

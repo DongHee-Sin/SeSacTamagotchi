@@ -17,12 +17,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HF0-2W-U7x">
-                                <rect key="frame" x="20" y="64" width="374" height="28.5"/>
+                                <rect key="frame" x="40" y="64" width="334" height="28.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XAl-GB-8Qb">
-                                <rect key="frame" x="20" y="92.5" width="374" height="1"/>
+                                <rect key="frame" x="40" y="97.5" width="334" height="1"/>
                                 <color key="backgroundColor" systemColor="labelColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="FeT-X8-F2o"/>
@@ -32,12 +32,12 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="XAl-GB-8Qb" secondAttribute="trailing" constant="20" id="HJM-zi-CZN"/>
+                            <constraint firstItem="XAl-GB-8Qb" firstAttribute="trailing" secondItem="HF0-2W-U7x" secondAttribute="trailing" id="DUk-b3-hjh"/>
+                            <constraint firstItem="XAl-GB-8Qb" firstAttribute="leading" secondItem="HF0-2W-U7x" secondAttribute="leading" id="MXQ-jp-oIb"/>
                             <constraint firstItem="HF0-2W-U7x" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="Ofr-kl-aiM"/>
-                            <constraint firstItem="XAl-GB-8Qb" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="SjO-6s-9zf"/>
-                            <constraint firstItem="XAl-GB-8Qb" firstAttribute="top" secondItem="HF0-2W-U7x" secondAttribute="bottom" id="bU0-GW-aCF"/>
-                            <constraint firstItem="HF0-2W-U7x" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="dkL-YB-lKe"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="HF0-2W-U7x" secondAttribute="trailing" constant="20" id="xKX-Bc-RSJ"/>
+                            <constraint firstItem="XAl-GB-8Qb" firstAttribute="top" secondItem="HF0-2W-U7x" secondAttribute="bottom" constant="5" id="bU0-GW-aCF"/>
+                            <constraint firstItem="HF0-2W-U7x" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="40" id="dkL-YB-lKe"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="HF0-2W-U7x" secondAttribute="trailing" constant="40" id="xKX-Bc-RSJ"/>
                         </constraints>
                     </view>
                     <connections>

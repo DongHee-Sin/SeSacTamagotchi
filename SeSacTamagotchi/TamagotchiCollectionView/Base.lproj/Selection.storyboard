@@ -31,13 +31,13 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1-6" translatesAutoresizingMaskIntoConstraints="NO" id="Yfb-1H-qfI">
-                                            <rect key="frame" x="0.0" y="0.0" width="181" height="181"/>
+                                            <rect key="frame" x="12" y="0.0" width="157" height="157"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="Yfb-1H-qfI" secondAttribute="height" multiplier="1:1" id="Wk8-6D-hFK"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0bM-q0-Wge" customClass="PaddingLabel" customModule="SeSacTamagotchi" customModuleProvider="target">
-                                            <rect key="frame" x="70" y="189" width="41.5" height="21"/>
+                                            <rect key="frame" x="70" y="165" width="41.5" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -58,9 +58,9 @@
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="Yfb-1H-qfI" firstAttribute="leading" secondItem="S7C-xc-T4T" secondAttribute="leading" id="76R-ii-JZR"/>
+                                        <constraint firstItem="Yfb-1H-qfI" firstAttribute="leading" secondItem="S7C-xc-T4T" secondAttribute="leading" constant="12" id="76R-ii-JZR"/>
                                         <constraint firstItem="Yfb-1H-qfI" firstAttribute="top" secondItem="S7C-xc-T4T" secondAttribute="top" id="EPd-sP-CzT"/>
-                                        <constraint firstAttribute="trailing" secondItem="Yfb-1H-qfI" secondAttribute="trailing" id="K5k-S6-Qdk"/>
+                                        <constraint firstAttribute="trailing" secondItem="Yfb-1H-qfI" secondAttribute="trailing" constant="12" id="K5k-S6-Qdk"/>
                                         <constraint firstItem="0bM-q0-Wge" firstAttribute="centerX" secondItem="S7C-xc-T4T" secondAttribute="centerX" id="LRy-vl-vVA"/>
                                         <constraint firstItem="0bM-q0-Wge" firstAttribute="top" secondItem="Yfb-1H-qfI" secondAttribute="bottom" constant="8" id="P5m-Rv-mNP"/>
                                         <constraint firstItem="0bM-q0-Wge" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="S7C-xc-T4T" secondAttribute="leading" id="abI-ov-R9Z"/>
