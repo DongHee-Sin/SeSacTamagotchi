@@ -49,6 +49,7 @@ class PopUpViewController: UIViewController {
             tamagotchiDescriptionLabel.text = tamaInfo.description
             tamagotchiDescriptionLabel.numberOfLines = 0
             tamagotchiDescriptionLabel.setDefaultFont()
+            tamagotchiDescriptionLabel.textAlignment = .center
         }
         
         popUpBackgroundView.layer.cornerRadius = popUpBackgroundView.frame.height / 15

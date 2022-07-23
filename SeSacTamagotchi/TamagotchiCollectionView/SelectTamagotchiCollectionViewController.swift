@@ -78,9 +78,9 @@ extension SelectTamagotchiCollectionViewController {
     func configureCollectionViewLayout() -> UICollectionViewLayout {
         let layout = UICollectionViewFlowLayout()
         
-        let spacing: CGFloat = 20
+        let spacing: CGFloat = 16
         let itemWidth: CGFloat = UIScreen.main.bounds.width - (spacing * 4)
-        let itemHeight: CGFloat = itemWidth * 1.3
+        let itemHeight: CGFloat = itemWidth * 1.5
         
         layout.itemSize = CGSize(width: itemWidth / 3, height: itemHeight / 3)
         layout.scrollDirection = .vertical

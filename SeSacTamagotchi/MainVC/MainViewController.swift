@@ -96,11 +96,17 @@ class MainViewController: UIViewController {
             guard let button = $0 else { return }
             button.layer.borderWidth = 1
             button.layer.borderColor = UIColor.SeSacLabelBorder.cgColor
-            button.layer.cornerRadius = button.frame.height / 10
-            button.titleLabel?.textColor = .SeSacLabelBorder
+            button.layer.cornerRadius = button.frame.height / 8
+            button.tintColor = .SeSacLabelBorder
+            button.titleLabel?.font = .boldSystemFont(ofSize: 14
+            )
         }
+        
         giveRiceButton.setTitle("밥먹기", for: .normal)
         giveWaterButton.setTitle("물먹기", for: .normal)
+        
+        giveRiceButton.setImage(UIImage(systemName: "drop.circle"), for: .normal)
+        giveWaterButton.setImage(UIImage(systemName: "leaf.circle"), for: .normal)
     }
     
     

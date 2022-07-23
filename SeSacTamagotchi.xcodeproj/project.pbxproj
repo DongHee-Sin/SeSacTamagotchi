@@ -20,6 +20,8 @@
 		D07F7F72288BA2CD00D38C78 /* SettingCellManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07F7F71288BA2CD00D38C78 /* SettingCellManager.swift */; };
 		D082FF51288AECCA00BE065D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D082FF50288AECCA00BE065D /* MainViewController.swift */; };
 		D082FF53288AF2DA00BE065D /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D082FF52288AF2DA00BE065D /* UIViewController+Extension.swift */; };
+		D08520A6288C201100A4EC3D /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D08520A5288C201100A4EC3D /* IQKeyboardManagerSwift */; };
+		D08520A8288C226C00A4EC3D /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08520A7288C226C00A4EC3D /* PaddingLabel.swift */; };
 		D0CF14AD288BBB32006BFBE2 /* Rename.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0CF14AC288BBB32006BFBE2 /* Rename.storyboard */; };
 		D0CF14AF288BBB49006BFBE2 /* RenameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CF14AE288BBB49006BFBE2 /* RenameViewController.swift */; };
 		D0F37051288A6E0E00E01182 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F37050288A6E0E00E01182 /* AppDelegate.swift */; };
@@ -47,6 +49,7 @@
 		D07F7F71288BA2CD00D38C78 /* SettingCellManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCellManager.swift; sourceTree = "<group>"; };
 		D082FF50288AECCA00BE065D /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		D082FF52288AF2DA00BE065D /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		D08520A7288C226C00A4EC3D /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 		D0CF14AC288BBB32006BFBE2 /* Rename.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Rename.storyboard; sourceTree = "<group>"; };
 		D0CF14AE288BBB49006BFBE2 /* RenameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenameViewController.swift; sourceTree = "<group>"; };
 		D0F3704D288A6E0E00E01182 /* SeSacTamagotchi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeSacTamagotchi.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,6 +72,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D04DDC9A288AC186000A27A0 /* Toast in Frameworks */,
+				D08520A6288C201100A4EC3D /* IQKeyboardManagerSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,6 +106,14 @@
 				D082FF50288AECCA00BE065D /* MainViewController.swift */,
 			);
 			path = MainVC;
+			sourceTree = "<group>";
+		};
+		D08520A9288C226F00A4EC3D /* CustomClass */ = {
+			isa = PBXGroup;
+			children = (
+				D08520A7288C226C00A4EC3D /* PaddingLabel.swift */,
+			);
+			path = CustomClass;
 			sourceTree = "<group>";
 		};
 		D0CF14B0288BBB6F006BFBE2 /* RenameVC */ = {
@@ -139,6 +151,7 @@
 				D07F7F6E288BA21400D38C78 /* SettingVC */,
 				D0F37070288A8DD400E01182 /* Model-Manager */,
 				D0F3706A288A722B00E01182 /* Extension */,
+				D08520A9288C226F00A4EC3D /* CustomClass */,
 				D0F3705B288A6E0F00E01182 /* LaunchScreen.storyboard */,
 				D0F37059288A6E0F00E01182 /* Assets.xcassets */,
 				D0F3705E288A6E0F00E01182 /* Info.plist */,
@@ -205,6 +218,7 @@
 			name = SeSacTamagotchi;
 			packageProductDependencies = (
 				D04DDC99288AC186000A27A0 /* Toast */,
+				D08520A5288C201100A4EC3D /* IQKeyboardManagerSwift */,
 			);
 			productName = SeSacTamagotchi;
 			productReference = D0F3704D288A6E0E00E01182 /* SeSacTamagotchi.app */;
@@ -236,6 +250,7 @@
 			mainGroup = D0F37044288A6E0E00E01182;
 			packageReferences = (
 				D04DDC98288AC186000A27A0 /* XCRemoteSwiftPackageReference "Toast-Swift" */,
+				D08520A4288C201100A4EC3D /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 			);
 			productRefGroup = D0F3704E288A6E0E00E01182 /* Products */;
 			projectDirPath = "";
@@ -274,6 +289,7 @@
 				D0F37067288A702500E01182 /* UILabel+Extension.swift in Sources */,
 				D04DDC90288AA513000A27A0 /* TamagotchiCellManager.swift in Sources */,
 				D082FF51288AECCA00BE065D /* MainViewController.swift in Sources */,
+				D08520A8288C226C00A4EC3D /* PaddingLabel.swift in Sources */,
 				D07F7F70288BA24600D38C78 /* SettingTableViewCell.swift in Sources */,
 				D0F37072288A8F3800E01182 /* SelectTamagotchiCollectionViewController.swift in Sources */,
 				D0F37074288A901600E01182 /* SelectTamagotchiCollectionViewCell.swift in Sources */,
@@ -516,6 +532,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		D08520A4288C201100A4EC3D /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -523,6 +547,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = D04DDC98288AC186000A27A0 /* XCRemoteSwiftPackageReference "Toast-Swift" */;
 			productName = Toast;
+		};
+		D08520A5288C201100A4EC3D /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D08520A4288C201100A4EC3D /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

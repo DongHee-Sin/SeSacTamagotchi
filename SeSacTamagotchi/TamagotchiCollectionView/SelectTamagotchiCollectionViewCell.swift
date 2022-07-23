@@ -20,7 +20,7 @@ class SelectTamagotchiCollectionViewCell: UICollectionViewCell {
         
         nameLabel.setBorder()
         nameLabel.setDefaultFont()
-        
+    
         tamagotchiImageView.image = UIImage(named: data.imageString)
         nameLabel.text = data.type.description
     }
