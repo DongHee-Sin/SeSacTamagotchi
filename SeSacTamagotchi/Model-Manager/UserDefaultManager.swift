@@ -18,7 +18,6 @@ struct UserDefault<T> {
             if let value = UserDefaults.standard.object(forKey: self.key) as? T {
                 return value
             }else {
-                
                 if let value = UserDefaults.standard.data(forKey: self.key) {
                     let decoder = JSONDecoder()
                     do {
@@ -35,7 +34,9 @@ struct UserDefault<T> {
             }
         }
         set {
-            if newValue is Tamagochi {
+            if let stringValue = newValue as? String {
+                UserDefaults.standard.set(stringValue, forKey: self.key)
+            }else {
                 let encoder = JSONEncoder()
                 let newValue = newValue as! Tamagochi
                 do {
@@ -45,8 +46,6 @@ struct UserDefault<T> {
                 catch {
                     return
                 }
-            }else {
-                UserDefaults.standard.set(newValue, forKey: self.key)
             }
         }
     }
@@ -54,7 +53,7 @@ struct UserDefault<T> {
 
 
 
-
+// 시뮬레이터에서 저장이 잘 안되는 문제 발생.. 폰으로 빌드하면 잘 저장됨...
 class UserDefaultManager {
     static var shared = UserDefaultManager()
     

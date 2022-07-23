@@ -38,13 +38,20 @@ class MainViewController: UIViewController {
     
     
     
-    // MARK: - View Did Load
+    // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configureInitialUI()
     }
     
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        UserDefaultManager.shared.tamagotchi = tamagotchiManager.getTamagotchiInstance()
+        UserDefaultManager.shared.userName = tamagotchiManager.getUserName()
+    }
     
     
     

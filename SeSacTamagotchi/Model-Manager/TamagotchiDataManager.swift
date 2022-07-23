@@ -54,10 +54,7 @@ class TamagotchiDataManager {
         self.userName = UserDefaultManager.shared.userName
     }
     
-    // ⭐️ 값이 오를 때마다 LV이 올랐는지 여부를 확인할 함수 필요
-    // 1. 값이 오르면, LV 업데이트
-    // 2-1 : LV이 올랐을 때, 핸들러 함수로 업데이트 처리
-    // 2-2 : 밥과 물을 줄 때마다 ViewController에서 밥,물,레벨,이미지 업데이트 처리
+
     func giveRice(count: Int, delegate: PresentAlertDelegate) {
         guard count < 100 else {
             delegate.presentAlert(message: "100개 이상의 밥은 한 번에 먹을 수 없어요!")
@@ -67,7 +64,7 @@ class TamagotchiDataManager {
         tamagochi.rice += count
     }
     
-    // ⭐️ 값이 오를 때마다 LV이 올랐는지 여부를 확인할 함수 필요
+
     func giveWater(count: Int, delegate: PresentAlertDelegate) {
         guard count < 50 else {
             delegate.presentAlert(message: "50개 이상의 물은 한 번에 먹을 수 없어요!")
@@ -106,7 +103,7 @@ class TamagotchiDataManager {
         let typeNumber: Int = tamagochi.type.rawValue
         let level: Int = tamagochi.level > 9 ? 9 : tamagochi.level
         
-        return UIImage(named: "\(typeNumber)-\(level)") ?? UIImage()
+        return UIImage(named: "\(typeNumber)-\(level).png") ?? UIImage()
     }
     
     
@@ -134,14 +131,12 @@ class TamagotchiDataManager {
     }
     
     
-    func getTamagotchiInfo() -> String {
-        return "LV \(tamagochi.level) · 밥알 \(tamagochi.rice)개 · 물방울 \(tamagochi.water)개"
+    func getTamagotchiInstance() -> Tamagochi {
+        return self.tamagochi
     }
     
     
-    
-    // MARK: - deinit
-    deinit {
-        UserDefaultManager.shared.tamagotchi = self.tamagochi
+    func getTamagotchiInfo() -> String {
+        return "LV \(tamagochi.level) · 밥알 \(tamagochi.rice)개 · 물방울 \(tamagochi.water)개"
     }
 }
