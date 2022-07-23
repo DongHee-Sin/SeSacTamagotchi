@@ -71,22 +71,53 @@ class SettingTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
-        case 0:
-            let sb = UIStoryboard(name: "Rename", bundle: nil)
-            guard let vc = sb.instantiateViewController(withIdentifier: "RenameViewController") as? RenameViewController else {
-                return
-            }
-            vc.delegate = self.delegate
-            self.navigationController?.pushViewController(vc, animated: true)
-        case 1:
+        case 0: renameButtonTapped()
+        case 1: changeTamagotchiButtonTapped()
+        case 2: resetButtonTapped()
+        default: break
+        }
+    }
+    
+    
+    func renameButtonTapped() {
+        let sb = UIStoryboard(name: "Rename", bundle: nil)
+        guard let vc = sb.instantiateViewController(withIdentifier: "RenameViewController") as? RenameViewController else {
+            return
+        }
+        vc.delegate = self.delegate
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    
+    func changeTamagotchiButtonTapped() {
+        let sb = UIStoryboard(name: "Selection", bundle: nil)
+        guard let vc = sb.instantiateViewController(withIdentifier: "SelectTamagotchiCollectionViewController") as? SelectTamagotchiCollectionViewController else {
+            return
+        }
+        vc.isInitialView = false
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    
+    func resetButtonTapped() {
+        let alertController = UIAlertController(title: "데이터 초기화", message: "정말 다시 처음부터 시작하실 건가용?", preferredStyle: .alert)
+        let noAction = UIAlertAction(title: "아냐!", style: .default)
+        let yesAction = UIAlertAction(title: "웅", style: .default) {_ in
+            UserDefaultManager.shared.resetAllData()
+            
             let sb = UIStoryboard(name: "Selection", bundle: nil)
             guard let vc = sb.instantiateViewController(withIdentifier: "SelectTamagotchiCollectionViewController") as? SelectTamagotchiCollectionViewController else {
                 return
             }
-            vc.isInitialView = false
-            self.navigationController?.pushViewController(vc, animated: true)
-        case 2: break    // 데이터 초기화
-        default: break
+            
+            let navi = UINavigationController(rootViewController: vc)
+            
+            self.changeRootViewController(to: navi)
         }
+        
+        alertController.addAction(noAction)
+        alertController.addAction(yesAction)
+        
+        present(alertController, animated: true)
     }
 }

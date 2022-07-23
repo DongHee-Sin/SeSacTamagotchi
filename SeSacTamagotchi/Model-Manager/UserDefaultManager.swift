@@ -8,6 +8,12 @@
 import Foundation
 
 
+enum UserDefaultsKey: String, CaseIterable {
+    case userName
+    case tamagotchi
+}
+
+
 @propertyWrapper
 struct UserDefault<T> {
     let key: String
@@ -58,10 +64,15 @@ class UserDefaultManager {
     
     private init() {}
     
-    @UserDefault(key: "userName", defaultValue: "대장")
+    @UserDefault(key: UserDefaultsKey.userName.rawValue, defaultValue: "대장")
     var userName: String
     
     
-    @UserDefault(key: "tamagotchi", defaultValue: Tamagochi(type: .none))
+    @UserDefault(key: UserDefaultsKey.tamagotchi.rawValue, defaultValue: Tamagochi(type: .none))
     var tamagotchi: Tamagochi
+    
+    
+    func resetAllData() {
+        UserDefaultsKey.allCases.forEach { UserDefaults.standard.removeObject(forKey: $0.rawValue) }
+    }
 }
