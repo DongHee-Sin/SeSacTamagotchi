@@ -32,11 +32,10 @@ class SelectTamagotchiCollectionViewController: UICollectionViewController {
         collectionView.collectionViewLayout = configureCollectionViewLayout()
         
         self.navigationItem.title = isInitialView ? "다마고치 선택하기" : "다마고치 변경하기"
-        if !isInitialView {
-            self.navigationController?.navigationBar.tintColor = .SeSacLabelBorder
-        }
+        if !isInitialView { self.navigationController?.navigationBar.tintColor = .SeSacLabelBorder }
     }
 }
+
 
 
 
@@ -65,7 +64,10 @@ extension SelectTamagotchiCollectionViewController {
         }
         
         let sb = UIStoryboard(name: "PopUp", bundle: nil)
-        guard let vc = sb.instantiateViewController(withIdentifier: "PopUpViewController") as? PopUpViewController else { return }
+        guard let vc = sb.instantiateViewController(withIdentifier: "PopUpViewController") as? PopUpViewController else {
+            self.view.makeToast("화면 전환 오류", duration: 1, position: .bottom)
+            return
+        }
         
         vc.tamagotchiInfo = dataManager.getTamagotchiCellInfo(at: indexPath.row)
         vc.modalPresentationStyle = .overFullScreen

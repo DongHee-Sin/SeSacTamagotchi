@@ -82,6 +82,7 @@ class SettingTableViewController: UITableViewController {
     func renameButtonTapped() {
         let sb = UIStoryboard(name: "Rename", bundle: nil)
         guard let vc = sb.instantiateViewController(withIdentifier: "RenameViewController") as? RenameViewController else {
+            self.view.makeToast("화면 전환 오류", duration: 1, position: .bottom)
             return
         }
         vc.delegate = self.delegate
@@ -92,6 +93,7 @@ class SettingTableViewController: UITableViewController {
     func changeTamagotchiButtonTapped() {
         let sb = UIStoryboard(name: "Selection", bundle: nil)
         guard let vc = sb.instantiateViewController(withIdentifier: "SelectTamagotchiCollectionViewController") as? SelectTamagotchiCollectionViewController else {
+            self.view.makeToast("화면 전환 오류", duration: 1, position: .bottom)
             return
         }
         vc.isInitialView = false
@@ -107,6 +109,7 @@ class SettingTableViewController: UITableViewController {
             
             let sb = UIStoryboard(name: "Selection", bundle: nil)
             guard let vc = sb.instantiateViewController(withIdentifier: "SelectTamagotchiCollectionViewController") as? SelectTamagotchiCollectionViewController else {
+                self.view.makeToast("화면 전환 오류", duration: 1, position: .bottom)
                 return
             }
             

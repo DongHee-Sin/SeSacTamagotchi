@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 class PopUpViewController: UIViewController {
 
     // MARK: - Propertys
@@ -51,7 +52,7 @@ class PopUpViewController: UIViewController {
             tamagotchiDescriptionLabel.setDefaultFont()
             tamagotchiDescriptionLabel.textAlignment = .center
         }
-        
+
         popUpBackgroundView.clipsToBounds = true
         popUpBackgroundView.layer.cornerRadius = popUpBackgroundView.frame.height / 15
         popUpBackgroundView.setBackgroundColor()
@@ -73,9 +74,10 @@ class PopUpViewController: UIViewController {
     @IBAction func startButtonTapped(_ sender: UIButton) {
         let sb = UIStoryboard(name: "Main", bundle: nil)
         guard let vc = sb.instantiateViewController(withIdentifier: "MainViewController") as? MainViewController else {
+            self.view.makeToast("화면 전환 오류", duration: 1, position: .bottom)
             return
         }
-        
+
         if let type = tamagotchiInfo?.type {
             vc.tamagotchiManager.changeType(to: type)
         }

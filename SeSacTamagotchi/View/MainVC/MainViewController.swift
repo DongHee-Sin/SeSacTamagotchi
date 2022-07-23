@@ -47,7 +47,7 @@ class MainViewController: UIViewController {
     // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         configureInitialUI()
     }
     
@@ -163,6 +163,7 @@ class MainViewController: UIViewController {
     @objc func settingButtonTapped() {
         let sb = UIStoryboard(name: "Setting", bundle: nil)
         guard let vc = sb.instantiateViewController(withIdentifier: "SettingTableViewController") as? SettingTableViewController else {
+            self.view.makeToast("화면 전환 오류", duration: 1, position: .bottom)
             return
         }
         

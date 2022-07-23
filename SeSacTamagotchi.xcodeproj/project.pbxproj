@@ -116,6 +116,17 @@
 			path = CustomClass;
 			sourceTree = "<group>";
 		};
+		D08520AA288C3F9C00A4EC3D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D0F37075288A902500E01182 /* TamagotchiCollectionView */,
+				D04DDC95288AAFC7000A27A0 /* PopUpVC */,
+				D082FF4F288AEB1500BE065D /* MainVC */,
+				D07F7F6E288BA21400D38C78 /* SettingVC */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		D0CF14B0288BBB6F006BFBE2 /* RenameVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -145,10 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				D0F3706B288A723000E01182 /* LifeCycle */,
-				D0F37075288A902500E01182 /* TamagotchiCollectionView */,
-				D04DDC95288AAFC7000A27A0 /* PopUpVC */,
-				D082FF4F288AEB1500BE065D /* MainVC */,
-				D07F7F6E288BA21400D38C78 /* SettingVC */,
+				D08520AA288C3F9C00A4EC3D /* View */,
 				D0F37070288A8DD400E01182 /* Model-Manager */,
 				D0F3706A288A722B00E01182 /* Extension */,
 				D08520A9288C226F00A4EC3D /* CustomClass */,
