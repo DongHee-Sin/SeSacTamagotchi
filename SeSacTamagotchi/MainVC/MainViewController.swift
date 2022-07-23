@@ -64,6 +64,7 @@ class MainViewController: UIViewController {
         
         UserDefaultManager.shared.tamagotchi = tamagotchiManager.getTamagotchiInstance()
         UserDefaultManager.shared.userName = tamagotchiManager.getUserName()
+        UserDefaultManager.shared.isDataStored = true
     }
     
     

@@ -11,6 +11,7 @@ import Foundation
 enum UserDefaultsKey: String, CaseIterable {
     case userName
     case tamagotchi
+    case isDataStored
 }
 
 
@@ -70,6 +71,9 @@ class UserDefaultManager {
     
     @UserDefault(key: UserDefaultsKey.tamagotchi.rawValue, defaultValue: Tamagochi(type: .none))
     var tamagotchi: Tamagochi
+    
+    @UserDefault(key: UserDefaultsKey.isDataStored.rawValue, defaultValue: false)
+    var isDataStored: Bool
     
     
     func resetAllData() {
