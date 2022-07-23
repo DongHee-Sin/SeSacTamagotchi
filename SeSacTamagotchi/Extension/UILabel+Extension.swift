@@ -13,17 +13,10 @@ extension UILabel {
     func setDefaultFont() {
         self.font = .systemFont(ofSize: 13, weight: .medium)
         self.textColor = .SeSacLabelBorder
-        self.textAlignment = .center
     }
     
     func setBoldFont() {
         self.font = .systemFont(ofSize: 14, weight: .bold)
-        self.textColor = .SeSacLabelBorder
-        self.textAlignment = .center
-    }
-    
-    func setNavigationTitleFont() {
-        self.font = .systemFont(ofSize: 15, weight: .bold)
         self.textColor = .SeSacLabelBorder
     }
     

@@ -131,6 +131,11 @@ class TamagotchiDataManager {
     }
     
     
+    func changeUserName(to newName: String) {
+        self.userName = newName
+    }
+    
+    
     func getTamagotchiInstance() -> Tamagochi {
         return self.tamagochi
     }

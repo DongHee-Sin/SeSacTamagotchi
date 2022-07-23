@@ -9,9 +9,16 @@ import UIKit
 
 class SettingTableViewCell: UITableViewCell {
 
+    // MARK: - Outlet
+    @IBOutlet weak var cellImageView: UIImageView!
+    @IBOutlet weak var cellTitleLabel: UILabel!
+    @IBOutlet weak var userNameLabel: UILabel!
+    
+    
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -20,4 +27,18 @@ class SettingTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    
+    func configureCellUI(data: SettingCell, userName: String?) {
+        if let userName = userName {
+            userNameLabel.text = userName
+            userNameLabel.setDefaultFont()
+        }else {
+            userNameLabel.text = ""
+        }
+        cellImageView.image = UIImage(systemName: data.image)
+        cellTitleLabel.text = data.title
+        
+        cellImageView.tintColor = .SeSacLabelBorder
+        cellTitleLabel.setBoldFont()
+    }
 }

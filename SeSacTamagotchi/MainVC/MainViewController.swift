@@ -14,6 +14,13 @@ protocol PresentAlertDelegate {
 }
 
 
+protocol UserNameDelegate {
+    var userName: String {get}
+    
+    func changeUserName(to newName: String)
+}
+
+
 class MainViewController: UIViewController {
 
     // MARK: - Property
@@ -43,6 +50,13 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         
         configureInitialUI()
+    }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.navigationItem.title = "\(tamagotchiManager.getUserName())님의 다마고치"
     }
     
     
@@ -91,8 +105,6 @@ class MainViewController: UIViewController {
     
     
     func setNavigationBar() {
-        self.navigationItem.title = "\(tamagotchiManager.getUserName())님의 다마고치"
-        
         let barButton = UIBarButtonItem(image: UIImage(systemName: "person.circle"), style: .plain, target: self, action: #selector(settingButtonTapped))
         self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.SeSacLabelBorder]
         barButton.tintColor = .SeSacLabelBorder 
@@ -143,7 +155,14 @@ class MainViewController: UIViewController {
     
     
     @objc func settingButtonTapped() {
-        // Setting VC 전환
+        let sb = UIStoryboard(name: "Setting", bundle: nil)
+        guard let vc = sb.instantiateViewController(withIdentifier: "SettingTableViewController") as? SettingTableViewController else {
+            return
+        }
+        
+        vc.delegate = self
+        
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 
@@ -157,4 +176,17 @@ extension MainViewController: PresentAlertDelegate {
         
         present(alertController, animated: true)
     }
+}
+
+
+
+extension MainViewController: UserNameDelegate {
+    var userName: String {
+        return tamagotchiManager.getUserName()
+    }
+    
+    func changeUserName(to newName: String) {
+        tamagotchiManager.changeUserName(to: newName)
+    }
+    
 }
