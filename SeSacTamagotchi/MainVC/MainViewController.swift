@@ -92,6 +92,11 @@ class MainViewController: UIViewController {
     
     func setNavigationBar() {
         self.navigationItem.title = "\(tamagotchiManager.getUserName())님의 다마고치"
+        
+        let barButton = UIBarButtonItem(image: UIImage(systemName: "person.circle"), style: .plain, target: self, action: #selector(settingButtonTapped))
+        self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.SeSacLabelBorder]
+        barButton.tintColor = .SeSacLabelBorder 
+        self.navigationItem.rightBarButtonItem = barButton
     }
     
     
@@ -111,6 +116,7 @@ class MainViewController: UIViewController {
     func updateAfterGiving() {
         setImage()
         updateTamagotchiInfoLabel()
+        speechBubbleLabel.text = tamagotchiManager.getSpeechBubbleText()
     }
     
     
@@ -135,6 +141,10 @@ class MainViewController: UIViewController {
         updateAfterGiving()
     }
     
+    
+    @objc func settingButtonTapped() {
+        // Setting VC 전환
+    }
 }
 
 

@@ -34,18 +34,17 @@ struct UserDefault<T> {
             }
         }
         set {
-            if let stringValue = newValue as? String {
-                UserDefaults.standard.set(stringValue, forKey: self.key)
-            }else {
+            if let tamagotchiValue = newValue as? Tamagochi {
                 let encoder = JSONEncoder()
-                let newValue = newValue as! Tamagochi
                 do {
-                    let encodedData = try encoder.encode(newValue)
+                    let encodedData = try encoder.encode(tamagotchiValue)
                     UserDefaults.standard.set(encodedData, forKey: self.key)
                 }
                 catch {
                     return
                 }
+            }else {
+                UserDefaults.standard.set(newValue, forKey: self.key)
             }
         }
     }

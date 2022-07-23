@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--TITLE-->
+        <!--Main View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
                 <viewController storyboardIdentifier="MainViewController" id="Y6W-OH-hqX" customClass="MainViewController" customModule="SeSacTamagotchi" customModuleProvider="target" sceneMemberID="viewController">
@@ -43,8 +43,8 @@
                                     <constraint firstItem="ps5-fG-318" firstAttribute="top" secondItem="FzM-EU-YCs" secondAttribute="top" constant="30" id="vAe-Sj-R9l"/>
                                 </constraints>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="3-1" translatesAutoresizingMaskIntoConstraints="NO" id="gFK-zT-kuO">
-                                <rect key="frame" x="93" y="334" width="228" height="228"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="gFK-zT-kuO">
+                                <rect key="frame" x="93" y="334.5" width="228" height="227"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="gFK-zT-kuO" secondAttribute="height" multiplier="1:1" id="5dv-La-UZB"/>
                                 </constraints>
@@ -147,9 +147,6 @@
                             <constraint firstItem="prc-JP-xFE" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="30" id="zVl-bv-01U"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="TITLE" id="1wj-ys-XDk">
-                        <barButtonItem key="rightBarButtonItem" image="person.circle" catalog="system" id="JFj-WI-ALs"/>
-                    </navigationItem>
                     <connections>
                         <outlet property="giveRiceButton" destination="Nur-vZ-hcU" id="tm0-rj-dNL"/>
                         <outlet property="giveWaterButton" destination="Llz-Jd-3kc" id="LjQ-qb-FDm"/>
@@ -169,7 +166,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="3-1" width="152" height="151"/>
         <image name="bubble" width="222" height="142"/>
         <image name="person.circle" catalog="system" width="128" height="121"/>
         <systemColor name="labelColor">

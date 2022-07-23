@@ -19,7 +19,7 @@ struct TamagotchiCellInfo {
 struct TamagotchiCollectionViewManager {
     private var tamagotchiList: [TamagotchiCellInfo]
     
-    let defaultCell = TamagotchiCellInfo(type: .none, imageString: "noImage", description: "준비중이에요")
+    private let defaultCell = TamagotchiCellInfo(type: .none, imageString: "noImage", description: "준비중이에요")
     
     var count: Int {
         return tamagotchiList.count

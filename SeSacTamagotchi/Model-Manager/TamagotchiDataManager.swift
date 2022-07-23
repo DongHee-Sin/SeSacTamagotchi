@@ -8,7 +8,7 @@
 import UIKit
 
 enum TamagochiType: Int, CustomStringConvertible, Codable {
-    case sting, smail, twinkle, none
+    case sting = 1, smail, twinkle, none
     
     var description: String {
         switch self {
