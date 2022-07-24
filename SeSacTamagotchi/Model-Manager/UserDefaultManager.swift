@@ -15,6 +15,7 @@ enum UserDefaultsKey: String, CaseIterable {
 }
 
 
+
 @propertyWrapper
 struct UserDefault<T> {
     let key: String
@@ -65,12 +66,14 @@ class UserDefaultManager {
     
     private init() {}
     
+    
     @UserDefault(key: UserDefaultsKey.userName.rawValue, defaultValue: "대장")
     var userName: String
     
     
     @UserDefault(key: UserDefaultsKey.tamagotchi.rawValue, defaultValue: Tamagochi(type: .none))
     var tamagotchi: Tamagochi
+    
     
     @UserDefault(key: UserDefaultsKey.isDataStored.rawValue, defaultValue: false)
     var isDataStored: Bool

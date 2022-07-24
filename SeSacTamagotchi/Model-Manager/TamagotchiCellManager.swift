@@ -17,13 +17,14 @@ struct TamagotchiCellInfo {
 
 
 struct TamagotchiCollectionViewManager {
+    
     private var tamagotchiList: [TamagotchiCellInfo]
     
     private let defaultCell = TamagotchiCellInfo(type: .none, imageString: "noImage", description: "준비중이에요")
     
-    var count: Int {
-        return tamagotchiList.count
-    }
+    var count: Int { return tamagotchiList.count }
+    
+    
     
     init() {
         tamagotchiList = [
@@ -32,6 +33,8 @@ struct TamagotchiCollectionViewManager {
             TamagotchiCellInfo(type: .twinkle, imageString: "3-6", description: "반짝반짝 다마고치입니당~ 키는 1cm 몸무게는 1g입니당~\n 겁나게 작지만 겁나 반짝거려서 잘 보입니당~\n저는 크로와상을 참 좋아합니당~\n입맛이 좀 까다로운 편입니당~")
         ]
     }
+    
+    
     
     func getTamagotchiCellInfo(at index: Int) -> TamagotchiCellInfo {
         guard index < tamagotchiList.count else { return defaultCell }

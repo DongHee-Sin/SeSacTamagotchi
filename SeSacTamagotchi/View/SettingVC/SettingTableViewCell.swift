@@ -13,20 +13,8 @@ class SettingTableViewCell: UITableViewCell {
     @IBOutlet weak var cellImageView: UIImageView!
     @IBOutlet weak var cellTitleLabel: UILabel!
     @IBOutlet weak var userNameLabel: UILabel!
-    
-    
-    
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
+    
     
     func configureCellUI(data: SettingCell, userName: String?) {
         if let userName = userName {

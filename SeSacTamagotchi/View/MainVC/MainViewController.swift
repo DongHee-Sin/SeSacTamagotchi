@@ -12,6 +12,7 @@ protocol PresentAlertDelegate {
 }
 
 
+
 protocol UserNameDelegate {
     var userName: String {get}
     
@@ -43,7 +44,6 @@ class MainViewController: UIViewController {
     
     
     
-    
     // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,15 +55,15 @@ class MainViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.navigationItem.title = "\(tamagotchiManager.getUserName())님의 다마고치"
+        self.navigationItem.title = "\(tamagotchiManager.userName)님의 다마고치"
     }
     
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         
-        UserDefaultManager.shared.tamagotchi = tamagotchiManager.getTamagotchiInstance()
-        UserDefaultManager.shared.userName = tamagotchiManager.getUserName()
+        UserDefaultManager.shared.tamagotchi = tamagotchiManager.tamagotchiInstance
+        UserDefaultManager.shared.userName = tamagotchiManager.userName
         UserDefaultManager.shared.isDataStored = true
     }
     
@@ -129,9 +129,14 @@ class MainViewController: UIViewController {
         
         nameLabel.setBoldFont()
         nameLabel.setBorder()
-        nameLabel.text = tamagotchiManager.getTamagotchiName()
+        nameLabel.text = tamagotchiManager.tamagotchiName
         
         tamagotchiInfoLabel.setBoldFont()
+    }
+    
+    
+    func setImage() {
+        tamagotchiImage.image = tamagotchiManager.getImage()
     }
     
     
@@ -143,12 +148,7 @@ class MainViewController: UIViewController {
     
     
     func updateTamagotchiInfoLabel() {
-        tamagotchiInfoLabel.text = tamagotchiManager.getTamagotchiInfo()
-    }
-    
-    
-    func setImage() {
-        tamagotchiImage.image = tamagotchiManager.getImage()
+        tamagotchiInfoLabel.text = tamagotchiManager.tamagotchiInfoString
     }
     
     
@@ -193,7 +193,7 @@ extension MainViewController: PresentAlertDelegate {
 
 extension MainViewController: UserNameDelegate {
     var userName: String {
-        return tamagotchiManager.getUserName()
+        return tamagotchiManager.userName
     }
     
     func changeUserName(to newName: String) {

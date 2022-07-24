@@ -16,13 +16,14 @@ struct SettingCell {
 
 
 struct SettingTableViewManager {
+    
     private var settingCellList: [SettingCell]
     
     private let defaultCell = SettingCell(title: "TableViewCell", image: "")
     
-    var count: Int {
-        return settingCellList.count
-    }
+    var count: Int { return settingCellList.count }
+    
+    
     
     init() {
         settingCellList = [
@@ -31,6 +32,8 @@ struct SettingTableViewManager {
             SettingCell(title: "데이터 초기화", image: "arrow.clockwise")
         ]
     }
+    
+    
     
     func getCellInfo(at index: Int) -> SettingCell {
         guard index < count else { return defaultCell }

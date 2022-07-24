@@ -16,6 +16,7 @@ class PopUpViewController: UIViewController {
     var isInitialView: Bool = true
     
     
+    
     // MARK: - Outlet
     @IBOutlet weak var popUpBackgroundView: UIView!
     
@@ -27,7 +28,6 @@ class PopUpViewController: UIViewController {
     
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var startButton: UIButton!
-    
     
     
     
@@ -44,9 +44,11 @@ class PopUpViewController: UIViewController {
     func configureInitialUI() {
         if let tamaInfo = tamagotchiInfo {
             tamagotchiImageView.image = UIImage(named: tamaInfo.imageString)
+            
             nameLabel.text = tamaInfo.type.description
             nameLabel.setDefaultFont()
             nameLabel.setBorder()
+            
             tamagotchiDescriptionLabel.text = tamaInfo.description
             tamagotchiDescriptionLabel.numberOfLines = 0
             tamagotchiDescriptionLabel.setDefaultFont()
@@ -63,6 +65,13 @@ class PopUpViewController: UIViewController {
         
         let title = isInitialView ? "시작하기" : "변경하기"
         startButton.setTitle(title, for: .normal)
+    }
+    
+    
+    func setButtonStyle() {
+        cancelButton.backgroundColor = UIColor(red: 220/255, green: 240/255, blue: 240/255, alpha: 1)
+        cancelButton.tintColor = .SeSacLabelBorder
+        startButton.tintColor = .SeSacLabelBorder
     }
     
     
@@ -85,12 +94,5 @@ class PopUpViewController: UIViewController {
         let navi = UINavigationController(rootViewController: vc)
         
         changeRootViewController(to: navi)
-    }
-    
-    
-    func setButtonStyle() {
-        cancelButton.backgroundColor = UIColor(red: 220/255, green: 240/255, blue: 240/255, alpha: 1)
-        cancelButton.tintColor = .SeSacLabelBorder
-        startButton.tintColor = .SeSacLabelBorder
     }
 }

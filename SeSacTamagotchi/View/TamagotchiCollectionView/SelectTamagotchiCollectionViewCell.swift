@@ -14,6 +14,7 @@ class SelectTamagotchiCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     
     
+    
     // MARK: - Method
     func configureCellUI(data: TamagotchiCellInfo) {
         self.contentView.backgroundColor = .SeSacBackground

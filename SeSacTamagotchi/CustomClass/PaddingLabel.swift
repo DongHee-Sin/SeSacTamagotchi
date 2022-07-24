@@ -14,6 +14,7 @@ import UIKit
     @IBInspectable var bottomPadding: CGFloat = 0.0
     @IBInspectable var rightPadding: CGFloat = 0.0
     
+    
     convenience init(padding: UIEdgeInsets) {
         self.init()
         self.topPadding = padding.top
@@ -22,10 +23,12 @@ import UIKit
         self.rightPadding = padding.right
     }
     
+    
     override func drawText(in rect: CGRect) {
         let padding = UIEdgeInsets.init(top: topPadding, left: leftPadding, bottom: bottomPadding, right: rightPadding)
         super.drawText(in: rect.inset(by: padding))
     }
+    
     
     override var intrinsicContentSize: CGSize {
         var contentSize = super.intrinsicContentSize

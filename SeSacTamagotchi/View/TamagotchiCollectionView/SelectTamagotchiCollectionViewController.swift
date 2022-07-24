@@ -16,6 +16,7 @@ class SelectTamagotchiCollectionViewController: UICollectionViewController {
     var isInitialView: Bool = true
     
     
+    
     // MARK: - View Did Load
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -15,7 +15,8 @@ class SettingTableViewController: UITableViewController {
     var delegate: UserNameDelegate?
     
     
-    // MARK: - View Did Load
+    
+    // MARK: - LifyCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -28,6 +29,7 @@ class SettingTableViewController: UITableViewController {
         
         tableView.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .none)
     }
+    
     
     
     // MARK: - Methods
@@ -43,39 +45,6 @@ class SettingTableViewController: UITableViewController {
     
     @objc func popButtonTapped() {
         self.navigationController?.popViewController(animated: true)
-    }
-    
-    
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataManager.count
-    }
-    
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "SettingTableViewCell", for: indexPath) as? SettingTableViewCell else {
-            return UITableViewCell()
-        }
-
-        cell.accessoryType = .disclosureIndicator
-        cell.configureCellUI(data: dataManager.getCellInfo(at: indexPath.row), userName: indexPath.row == 0 ? delegate?.userName : nil)
-        cell.selectionStyle = .none
-        
-        return cell
-    }
-    
-    
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 50
-    }
-    
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        switch indexPath.row {
-        case 0: renameButtonTapped()
-        case 1: changeTamagotchiButtonTapped()
-        case 2: resetButtonTapped()
-        default: break
-        }
     }
     
     
@@ -122,5 +91,42 @@ class SettingTableViewController: UITableViewController {
         alertController.addAction(yesAction)
         
         present(alertController, animated: true)
+    }
+}
+
+
+
+// MARK: - TableView
+extension SettingTableViewController {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return dataManager.count
+    }
+    
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "SettingTableViewCell", for: indexPath) as? SettingTableViewCell else {
+            return UITableViewCell()
+        }
+
+        cell.accessoryType = .disclosureIndicator
+        cell.configureCellUI(data: dataManager.getCellInfo(at: indexPath.row), userName: indexPath.row == 0 ? delegate?.userName : nil)
+        cell.selectionStyle = .none
+        
+        return cell
+    }
+    
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 50
+    }
+    
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch indexPath.row {
+        case 0: renameButtonTapped()
+        case 1: changeTamagotchiButtonTapped()
+        case 2: resetButtonTapped()
+        default: break
+        }
     }
 }
