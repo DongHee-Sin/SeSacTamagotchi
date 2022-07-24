@@ -56,6 +56,7 @@ class MainViewController: UIViewController {
         super.viewWillAppear(animated)
         
         self.navigationItem.title = "\(tamagotchiManager.userName)님의 다마고치"
+        speechBubbleLabel.text = tamagotchiManager.getSpeechBubbleText()
     }
     
     
