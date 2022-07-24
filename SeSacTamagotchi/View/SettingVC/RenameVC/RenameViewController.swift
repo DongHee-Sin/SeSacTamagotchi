@@ -63,11 +63,11 @@ class RenameViewController: UIViewController {
     
     
     @objc func saveButtonTapped() {
-        if renameTextField.text != "" {
-            delegate?.changeUserName(to: renameTextField.text!)
+        if let newName = renameTextField.text, 2...6 ~= newName.count {
+            delegate?.changeUserName(to: newName)
             popButtonTapped()
         }else {
-            let alertController = UIAlertController(title: "바꿀 이름을 알려주세요!", message: nil, preferredStyle: .alert)
+            let alertController = UIAlertController(title: "이름 규칙을 확인해주세요", message: "2~6글자 사이의 이름만 사용할 수 있습니다", preferredStyle: .alert)
             let alertAction = UIAlertAction(title: "넹", style: .default)
             alertController.addAction(alertAction)
             present(alertController, animated: true)

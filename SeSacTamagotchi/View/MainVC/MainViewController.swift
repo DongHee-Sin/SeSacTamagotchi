@@ -77,6 +77,9 @@ class MainViewController: UIViewController {
         setNavigationBar()
         setLabel()
         updateTamagotchiInfoLabel()
+        
+        riceTextField.delegate = self
+        waterTextField.delegate = self
     }
     
     
@@ -196,4 +199,17 @@ extension MainViewController: UserNameDelegate {
         tamagotchiManager.changeUserName(to: newName)
     }
     
+}
+
+
+
+extension MainViewController: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if Int(string) != nil || string == "" {
+            return true
+        }else {
+            self.view.makeToast("숫자만 입력해주세요!", duration: 1, position: .center)
+            return false
+        }
+    }
 }

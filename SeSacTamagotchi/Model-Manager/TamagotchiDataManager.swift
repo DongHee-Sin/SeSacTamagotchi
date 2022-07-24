@@ -33,6 +33,7 @@ struct Tamagochi: Codable {
 
 class TamagotchiDataManager {
     
+    // MARK: - Propertys
     private var tamagochi: Tamagochi
     private var userName: String
     
@@ -48,13 +49,17 @@ class TamagotchiDataManager {
         "배불러요..!! 그만 먹이세요",
     ]
     
+
     
+    // MARK: - Init
     init() {
         self.tamagochi = UserDefaultManager.shared.tamagotchi
         self.userName = UserDefaultManager.shared.userName
     }
     
 
+    
+    // MARK: - Methods
     func giveRice(count: Int, delegate: PresentAlertDelegate) {
         guard count < 100 else {
             delegate.presentAlert(message: "100개 이상의 밥은 한 번에 먹을 수 없어요!")
@@ -76,6 +81,8 @@ class TamagotchiDataManager {
     
     
     func updateLevel() {
+        guard self.tamagochi.level < 10 else { return }
+        
         let energyValue = (Double(tamagochi.rice) / 5) + (Double(tamagochi.water) / 2)
         
         switch energyValue {

@@ -18,7 +18,7 @@ struct SettingCell {
 struct SettingTableViewManager {
     private var settingCellList: [SettingCell]
     
-    private let defaultCell = SettingCell(title: "", image: "")
+    private let defaultCell = SettingCell(title: "TableViewCell", image: "")
     
     var count: Int {
         return settingCellList.count
