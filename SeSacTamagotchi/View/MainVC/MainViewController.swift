@@ -125,6 +125,7 @@ class MainViewController: UIViewController {
         speechBubbleLabel.text = tamagotchiManager.getSpeechBubbleText()
         speechBubbleLabel.setDefaultFont()
         speechBubbleLabel.numberOfLines = 0
+        speechBubbleLabel.textAlignment = .center
         
         nameLabel.setBoldFont()
         nameLabel.setBorder()

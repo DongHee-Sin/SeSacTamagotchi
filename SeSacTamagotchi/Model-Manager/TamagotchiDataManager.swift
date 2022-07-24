@@ -37,18 +37,6 @@ class TamagotchiDataManager {
     private var tamagochi: Tamagochi
     private var userName: String
     
-    
-    lazy var speechBubbleList: [String] = [
-        "\(userName)님 커밋 푸시 하셨나요?",
-        "복습 아직 안하셨다구요? 지금 잠이 오세요? \(userName)님???",
-        "\(userName)님! 과제할 시간이네요!",
-        "\(userName)님 잠은 죽어서 자는 것도 나쁘지 않을 것 같아요.",
-        "전 아직 배고파요 \(userName)님 먹을걸 더 주세요",
-        "테이블뷰컨트롤러와 뷰컨트롤러는 어떤 차이가 있을까요?",
-        "\(userName)님, 야식 메뉴로는 어떤게 좋을까요?",
-        "배불러요..!! 그만 먹이세요",
-    ]
-    
 
     
     // MARK: - Init
@@ -119,15 +107,6 @@ class TamagotchiDataManager {
     }
     
     
-    func getSpeechBubbleText() -> String {
-        if tamagochi.level >= 10 {
-            return "저는 다 자랐어요. 이제 독립할거에요."
-        }else {
-            return speechBubbleList.randomElement() ?? "저런,, 기본값 말풍선이 나왔네요. 뭐가 문제인지 찾아보세요."
-        }
-    }
-    
-    
     func getTamagotchiName() -> String {
         return tamagochi.type.description
     }
@@ -150,5 +129,34 @@ class TamagotchiDataManager {
     
     func getTamagotchiInfo() -> String {
         return "LV \(tamagochi.level) · 밥알 \(tamagochi.rice)개 · 물방울 \(tamagochi.water)개"
+    }
+    
+    
+    func getSpeechBubbleText() -> String {
+        var speechBubbleList: [String] = []
+        
+        if tamagochi.level < 10 {
+            speechBubbleList = [
+                "\(userName)님 커밋 푸시 하셨나요?",
+                "복습 아직 안하셨다구요? 지금 잠이 오세요? \(userName)님???",
+                "\(userName)님! 과제할 시간이네요!",
+                "\(userName)님 잠은 죽어서 자는 것도 나쁘지 않을 것 같아요.",
+                "전 아직 배고파요 \(userName)님 먹을걸 더 주세요",
+                "테이블뷰컨트롤러와 뷰컨트롤러는 어떤 차이가 있을까요?",
+                "\(userName)님, 야식 메뉴로는 어떤게 좋을까요?"
+            ]
+        }else {
+            speechBubbleList = [
+                "\(userName)님 저는 이제 다 자랐어요.",
+                "악 - 다마고치 배 터진다",
+                "키워주셔서 감사합니다 \(userName)님\n이제 저는 독립할거에요.",
+                "\(userName)님 다른 다마고치를 또 키워보시는건 어떨까요?",
+                "100점짜리 \(userName)님 *^^*",
+                "과제하셔야죠 \(userName)님, 집중하세요",
+                "배불러요..!! 그만 먹이세요"
+            ]
+        }
+        
+        return speechBubbleList.randomElement() ?? "저런,, 기본값 말풍선이 나왔네요. 뭐가 문제인지 찾아보세요."
     }
 }
