@@ -56,7 +56,7 @@ class PopUpViewController: UIViewController {
         }
 
         popUpBackgroundView.clipsToBounds = true
-        popUpBackgroundView.layer.cornerRadius = popUpBackgroundView.frame.height / 15
+        popUpBackgroundView.layer.cornerRadius = popUpBackgroundView.frame.height / 20
         popUpBackgroundView.setBackgroundColor()
         
         lineViews.forEach { $0.setLineColor() }
@@ -69,9 +69,9 @@ class PopUpViewController: UIViewController {
     
     
     func setButtonStyle() {
-        cancelButton.backgroundColor = UIColor(red: 220/255, green: 240/255, blue: 240/255, alpha: 1)
-        cancelButton.tintColor = .SeSacLabelBorder
-        startButton.tintColor = .SeSacLabelBorder
+        cancelButton.backgroundColor = .seSacDeepBackground
+        cancelButton.tintColor = .seSacLabelBorder
+        startButton.tintColor = .seSacLabelBorder
     }
     
     

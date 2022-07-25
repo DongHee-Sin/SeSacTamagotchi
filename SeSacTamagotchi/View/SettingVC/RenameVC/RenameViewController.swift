@@ -34,10 +34,10 @@ class RenameViewController: UIViewController {
         renameTextField.placeholder = "대장님 이름을 알려주세요!"
         renameTextField.text = delegate?.userName
         renameTextField.borderStyle = .none
-        renameTextField.textColor = .SeSacLabelBorder
+        renameTextField.textColor = .seSacLabelBorder
         renameTextField.font = .systemFont(ofSize: 15)
         
-        lineView.backgroundColor = .SeSacLabelBorder
+        lineView.backgroundColor = .seSacLabelBorder
         
         setNavigationBar()
     }
@@ -45,12 +45,12 @@ class RenameViewController: UIViewController {
     
     func setNavigationBar() {
         self.navigationItem.title = "대장님 이름 정하기"
-        self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.SeSacLabelBorder]
+        self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.seSacLabelBorder]
         
         let leftBarButton = UIBarButtonItem(image: UIImage(systemName: "chevron.backward"), style: .plain, target: self, action: #selector(popButtonTapped))
         let rightBarButton = UIBarButtonItem(title: "저장", style: .plain, target: self, action: #selector(saveButtonTapped))
-        leftBarButton.tintColor = .SeSacLabelBorder
-        rightBarButton.tintColor = .SeSacLabelBorder
+        leftBarButton.tintColor = .seSacLabelBorder
+        rightBarButton.tintColor = .seSacLabelBorder
         
         self.navigationItem.leftBarButtonItem = leftBarButton
         self.navigationItem.rightBarButtonItem = rightBarButton

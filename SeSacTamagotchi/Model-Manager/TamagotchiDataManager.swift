@@ -111,11 +111,6 @@ class TamagotchiDataManager {
     }
     
     
-    func updateDataBasedUserDefaults(data: Tamagochi) {
-        self.tamagochi = data
-    }
-    
-    
     func changeUserName(to newName: String) {
         self._userName = newName
     }

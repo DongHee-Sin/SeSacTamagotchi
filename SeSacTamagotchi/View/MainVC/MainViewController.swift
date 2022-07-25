@@ -99,9 +99,9 @@ class MainViewController: UIViewController {
         [giveRiceButton, giveWaterButton].forEach {
             guard let button = $0 else { return }
             button.layer.borderWidth = 1
-            button.layer.borderColor = UIColor.SeSacLabelBorder.cgColor
+            button.layer.borderColor = UIColor.seSacLabelBorder.cgColor
             button.layer.cornerRadius = button.frame.height / 8
-            button.tintColor = .SeSacLabelBorder
+            button.tintColor = .seSacLabelBorder
             button.titleLabel?.font = .boldSystemFont(ofSize: 14
             )
         }
@@ -116,8 +116,8 @@ class MainViewController: UIViewController {
     
     func setNavigationBar() {
         let barButton = UIBarButtonItem(image: UIImage(systemName: "person.circle"), style: .plain, target: self, action: #selector(settingButtonTapped))
-        self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.SeSacLabelBorder]
-        barButton.tintColor = .SeSacLabelBorder 
+        self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.seSacLabelBorder]
+        barButton.tintColor = .seSacLabelBorder 
         self.navigationItem.rightBarButtonItem = barButton
     }
     
@@ -131,8 +131,9 @@ class MainViewController: UIViewController {
         nameLabel.setBoldFont()
         nameLabel.setBorder()
         nameLabel.text = tamagotchiManager.tamagotchiName
+        nameLabel.backgroundColor = .seSacDeepBackground
         
-        tamagotchiInfoLabel.setBoldFont()
+        tamagotchiInfoLabel.setMediumFont()
     }
     
     

@@ -28,12 +28,12 @@ class SelectTamagotchiCollectionViewController: UICollectionViewController {
     
     // MARK: - Methods
     func configureInitialUI() {
-        self.collectionView.backgroundColor = .SeSacBackground
+        self.collectionView.backgroundColor = .seSacBackground
         
         collectionView.collectionViewLayout = configureCollectionViewLayout()
         
         self.navigationItem.title = isInitialView ? "다마고치 선택하기" : "다마고치 변경하기"
-        if !isInitialView { self.navigationController?.navigationBar.tintColor = .SeSacLabelBorder }
+        if !isInitialView { self.navigationController?.navigationBar.tintColor = .seSacLabelBorder }
     }
 }
 

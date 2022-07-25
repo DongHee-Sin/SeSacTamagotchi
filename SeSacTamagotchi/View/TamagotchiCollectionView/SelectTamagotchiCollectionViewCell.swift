@@ -17,7 +17,7 @@ class SelectTamagotchiCollectionViewCell: UICollectionViewCell {
     
     // MARK: - Method
     func configureCellUI(data: TamagotchiCellInfo) {
-        self.contentView.backgroundColor = .SeSacBackground
+        self.contentView.backgroundColor = .seSacBackground
         
         nameLabel.setBorder()
         nameLabel.setDefaultFont()

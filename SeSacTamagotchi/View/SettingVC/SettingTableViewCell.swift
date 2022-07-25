@@ -26,7 +26,7 @@ class SettingTableViewCell: UITableViewCell {
         cellImageView.image = UIImage(systemName: data.image)
         cellTitleLabel.text = data.title
         
-        cellImageView.tintColor = .SeSacLabelBorder
-        cellTitleLabel.setBoldFont()
+        cellImageView.tintColor = .seSacLabelBorder
+        cellTitleLabel.setMediumFont()
     }
 }

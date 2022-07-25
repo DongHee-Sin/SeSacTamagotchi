@@ -35,10 +35,10 @@ class SettingTableViewController: UITableViewController {
     // MARK: - Methods
     func configureInitialUI() {
         self.navigationItem.title = "설정"
-        self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.SeSacLabelBorder]
+        self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.seSacLabelBorder]
         
         let barButton = UIBarButtonItem(image: UIImage(systemName: "chevron.backward"), style: .plain, target: self, action: #selector(popButtonTapped))
-        barButton.tintColor = .SeSacLabelBorder
+        barButton.tintColor = .seSacLabelBorder
         self.navigationItem.leftBarButtonItem = barButton
     }
     

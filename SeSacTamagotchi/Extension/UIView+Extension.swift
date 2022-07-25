@@ -9,10 +9,10 @@ import UIKit
 
 extension UIView {
     func setBackgroundColor() {
-        self.backgroundColor = .SeSacBackground
+        self.backgroundColor = .seSacBackground
     }
     
     func setLineColor() {
-        self.backgroundColor = .SeSacLabelBorder
+        self.backgroundColor = .seSacLabelBorder
     }
 }
