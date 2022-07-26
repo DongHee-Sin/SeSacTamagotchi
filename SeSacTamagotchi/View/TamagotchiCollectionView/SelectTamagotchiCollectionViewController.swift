@@ -8,12 +8,19 @@
 import UIKit
 import Toast
 
+
+enum ViewStatus {
+    case initialView
+    case changeView
+}
+
+
 class SelectTamagotchiCollectionViewController: UICollectionViewController {
     
     // MARK: - Propertys
     var dataManager = TamagotchiCollectionViewManager()
     
-    var isInitialView: Bool = true
+    var viewStatus: ViewStatus?
     
     
     
@@ -31,9 +38,16 @@ class SelectTamagotchiCollectionViewController: UICollectionViewController {
         self.collectionView.backgroundColor = .seSacBackground
         
         collectionView.collectionViewLayout = configureCollectionViewLayout()
-        
-        self.navigationItem.title = isInitialView ? "다마고치 선택하기" : "다마고치 변경하기"
-        if !isInitialView { self.navigationController?.navigationBar.tintColor = .seSacLabelBorder }
+                
+        switch viewStatus {
+        case .initialView:
+            navigationItem.title = "다마고치 선택하기"
+        case .changeView:
+            navigationItem.title = "다마고치 변경하기"
+            self.navigationController?.navigationBar.tintColor = .seSacLabelBorder
+        default:
+            break
+        }
     }
 }
 
@@ -72,7 +86,7 @@ extension SelectTamagotchiCollectionViewController {
         
         vc.tamagotchiInfo = dataManager.getTamagotchiCellInfo(at: indexPath.row)
         vc.modalPresentationStyle = .overFullScreen
-        vc.isInitialView = self.isInitialView
+        vc.viewStatus = self.viewStatus
         
         present(vc, animated: true)
     }

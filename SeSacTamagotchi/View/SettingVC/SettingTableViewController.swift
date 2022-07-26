@@ -65,7 +65,7 @@ class SettingTableViewController: UITableViewController {
             self.view.makeToast("화면 전환 오류", duration: 1, position: .bottom)
             return
         }
-        vc.isInitialView = false
+        vc.viewStatus = .changeView
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

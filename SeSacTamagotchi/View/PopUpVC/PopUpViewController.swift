@@ -13,7 +13,7 @@ class PopUpViewController: UIViewController {
     // MARK: - Propertys
     var tamagotchiInfo: TamagotchiCellInfo?
     
-    var isInitialView: Bool = true
+    var viewStatus: ViewStatus?
     
     
     
@@ -63,8 +63,11 @@ class PopUpViewController: UIViewController {
         
         setButtonStyle()
         
-        let title = isInitialView ? "시작하기" : "변경하기"
-        startButton.setTitle(title, for: .normal)
+        switch viewStatus {
+        case .initialView: startButton.setTitle("시작하기", for: .normal)
+        case .changeView: startButton.setTitle("변경하기", for: .normal)
+        default: break
+        }
     }
     
     

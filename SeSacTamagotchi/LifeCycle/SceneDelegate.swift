@@ -24,6 +24,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         }else {
             let sb = UIStoryboard(name: "Selection", bundle: nil)
             guard let vc = sb.instantiateViewController(withIdentifier: "SelectTamagotchiCollectionViewController") as? SelectTamagotchiCollectionViewController else { return }
+            vc.viewStatus = .initialView
             let navi = UINavigationController(rootViewController: vc)
             window?.rootViewController = navi
         }
