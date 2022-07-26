@@ -40,6 +40,8 @@ class SettingTableViewController: UITableViewController {
         let barButton = UIBarButtonItem(image: UIImage(systemName: "chevron.backward"), style: .plain, target: self, action: #selector(popButtonTapped))
         barButton.tintColor = .seSacLabelBorder
         self.navigationItem.leftBarButtonItem = barButton
+        
+        tableView.setBackgroundColor()
     }
     
     

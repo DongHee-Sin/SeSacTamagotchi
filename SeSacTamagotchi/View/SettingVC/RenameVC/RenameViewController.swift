@@ -40,6 +40,8 @@ class RenameViewController: UIViewController {
         lineView.backgroundColor = .seSacLabelBorder
         
         setNavigationBar()
+        
+        view.setBackgroundColor()
     }
     
     

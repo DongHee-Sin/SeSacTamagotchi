@@ -79,6 +79,8 @@ class MainViewController: UIViewController {
         setLabel()
         updateTamagotchiInfoLabel()
         
+        view.setBackgroundColor()
+        
         riceTextField.delegate = self
         waterTextField.delegate = self
     }
@@ -117,8 +119,12 @@ class MainViewController: UIViewController {
     func setNavigationBar() {
         let barButton = UIBarButtonItem(image: UIImage(systemName: "person.circle"), style: .plain, target: self, action: #selector(settingButtonTapped))
         self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.seSacLabelBorder]
-        barButton.tintColor = .seSacLabelBorder 
+        barButton.tintColor = .seSacLabelBorder
         self.navigationItem.rightBarButtonItem = barButton
+
+        let navigationBarAppearance = UINavigationBarAppearance()
+        navigationBarAppearance.backgroundColor = .seSacBackground
+        navigationController?.navigationBar.scrollEdgeAppearance = navigationBarAppearance
     }
     
     

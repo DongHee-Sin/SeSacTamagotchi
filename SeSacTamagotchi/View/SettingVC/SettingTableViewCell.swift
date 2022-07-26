@@ -28,5 +28,7 @@ class SettingTableViewCell: UITableViewCell {
         
         cellImageView.tintColor = .seSacLabelBorder
         cellTitleLabel.setMediumFont()
+        
+        contentView.setBackgroundColor()
     }
 }
