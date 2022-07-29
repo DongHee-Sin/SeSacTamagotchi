@@ -49,6 +49,9 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
 
         configureInitialUI()
+        
+        NotificationManager.shared.removeAllNotification()
+        NotificationManager.shared.sendNotification()
     }
     
     
@@ -66,6 +69,17 @@ class MainViewController: UIViewController {
         UserDefaultManager.shared.tamagotchi = tamagotchiManager.tamagotchiInstance
         UserDefaultManager.shared.userName = tamagotchiManager.userName
         UserDefaultManager.shared.isDataStored = true
+
+        NotificationManager.shared.sendNotification()
+    }
+    
+    
+    deinit {
+//        UserDefaultManager.shared.tamagotchi = tamagotchiManager.tamagotchiInstance
+//        UserDefaultManager.shared.userName = tamagotchiManager.userName
+//        UserDefaultManager.shared.isDataStored = true
+//
+//        NotificationManager.shared.sendNotification()
     }
     
     
@@ -88,9 +102,10 @@ class MainViewController: UIViewController {
     
     func setTextField() {
         [riceTextField, waterTextField].forEach {
-            $0?.borderStyle = .none
-            $0?.textAlignment = .center
-            $0?.keyboardType = .numberPad
+            guard let textField = $0 else { return }
+            textField.borderStyle = .none
+            textField.textAlignment = .center
+            textField.keyboardType = .numberPad
         }
         riceTextField.placeholder = "밥주세용"
         waterTextField.placeholder = "물주세용"

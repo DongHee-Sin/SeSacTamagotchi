@@ -53,6 +53,8 @@ class PopUpViewController: UIViewController {
             tamagotchiDescriptionLabel.numberOfLines = 0
             tamagotchiDescriptionLabel.setDefaultFont()
             tamagotchiDescriptionLabel.textAlignment = .center
+            
+            view.backgroundColor = UIColor(red: 1/255, green: 1/255, blue: 1/255, alpha: 0.4)
         }
 
         popUpBackgroundView.clipsToBounds = true

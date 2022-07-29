@@ -14,6 +14,7 @@
 		D04DDC9A288AC186000A27A0 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = D04DDC99288AC186000A27A0 /* Toast */; };
 		D04DDC9C288AC739000A27A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D04DDC9B288AC739000A27A0 /* Main.storyboard */; };
 		D04DDC9E288ACB9C000A27A0 /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04DDC9D288ACB9C000A27A0 /* UserDefaultManager.swift */; };
+		D05429762893C15B0040DBEC /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05429752893C15B0040DBEC /* NotificationManager.swift */; };
 		D07F7F6B288BA1DF00D38C78 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D07F7F6A288BA1DF00D38C78 /* Setting.storyboard */; };
 		D07F7F6D288BA20300D38C78 /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07F7F6C288BA20300D38C78 /* SettingTableViewController.swift */; };
 		D07F7F70288BA24600D38C78 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07F7F6F288BA24600D38C78 /* SettingTableViewCell.swift */; };
@@ -43,6 +44,7 @@
 		D04DDC96288AB71F000A27A0 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		D04DDC9B288AC739000A27A0 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		D04DDC9D288ACB9C000A27A0 /* UserDefaultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultManager.swift; sourceTree = "<group>"; };
+		D05429752893C15B0040DBEC /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		D07F7F6A288BA1DF00D38C78 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		D07F7F6C288BA20300D38C78 /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
 		D07F7F6F288BA24600D38C78 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 				D07F7F71288BA2CD00D38C78 /* SettingCellManager.swift */,
 				D0F3706C288A81F200E01182 /* TamagotchiDataManager.swift */,
 				D04DDC9D288ACB9C000A27A0 /* UserDefaultManager.swift */,
+				D05429752893C15B0040DBEC /* NotificationManager.swift */,
 			);
 			path = "Model-Manager";
 			sourceTree = "<group>";
@@ -306,6 +309,7 @@
 				D0CF14AF288BBB49006BFBE2 /* RenameViewController.swift in Sources */,
 				D04DDC9E288ACB9C000A27A0 /* UserDefaultManager.swift in Sources */,
 				D07F7F72288BA2CD00D38C78 /* SettingCellManager.swift in Sources */,
+				D05429762893C15B0040DBEC /* NotificationManager.swift in Sources */,
 				D04DDC94288AAFC4000A27A0 /* PopUpViewController.swift in Sources */,
 				D04DDC97288AB71F000A27A0 /* UIView+Extension.swift in Sources */,
 				D0F37053288A6E0E00E01182 /* SceneDelegate.swift in Sources */,
