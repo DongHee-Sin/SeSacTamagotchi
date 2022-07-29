@@ -72,7 +72,11 @@ class UserDefaultManager {
     
     
     @UserDefault(key: UserDefaultsKey.tamagotchi.rawValue, defaultValue: Tamagochi(type: .none))
-    var tamagotchi: Tamagochi
+    var tamagotchi: Tamagochi {
+        didSet {
+            isDataStored = true
+        }
+    }
     
     
     @UserDefault(key: UserDefaultsKey.isDataStored.rawValue, defaultValue: false)

@@ -49,9 +49,6 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
 
         configureInitialUI()
-        
-        NotificationManager.shared.removeAllNotification()
-        NotificationManager.shared.sendNotification()
     }
     
     
@@ -60,17 +57,6 @@ class MainViewController: UIViewController {
         
         self.navigationItem.title = "\(tamagotchiManager.userName)님의 다마고치"
         speechBubbleLabel.text = tamagotchiManager.getSpeechBubbleText()
-    }
-    
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        
-        UserDefaultManager.shared.tamagotchi = tamagotchiManager.tamagotchiInstance
-        UserDefaultManager.shared.userName = tamagotchiManager.userName
-        UserDefaultManager.shared.isDataStored = true
-
-        NotificationManager.shared.sendNotification()
     }
     
     
@@ -157,6 +143,7 @@ class MainViewController: UIViewController {
         setImage()
         updateTamagotchiInfoLabel()
         speechBubbleLabel.text = tamagotchiManager.getSpeechBubbleText()
+        UserDefaultManager.shared.tamagotchi = tamagotchiManager.tamagotchiInstance
     }
     
     
@@ -211,6 +198,7 @@ extension MainViewController: UserNameDelegate {
     
     func changeUserName(to newName: String) {
         tamagotchiManager.changeUserName(to: newName)
+        UserDefaultManager.shared.userName = newName
     }
     
 }

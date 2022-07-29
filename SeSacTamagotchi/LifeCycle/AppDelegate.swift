@@ -19,6 +19,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         return true
     }
+    
+    
+    func applicationWillTerminate(_ application: UIApplication) {
+        NotificationManager.shared.removeAllNotification()
+        NotificationManager.shared.sendNotification()
+    }
+    
 
     // MARK: UISceneSession Lifecycle
 

@@ -29,8 +29,6 @@ class SelectTamagotchiCollectionViewController: UICollectionViewController {
         super.viewDidLoad()
         
         configureInitialUI()
-        
-        NotificationManager.shared.requestAuthorization()
     }
 
     
