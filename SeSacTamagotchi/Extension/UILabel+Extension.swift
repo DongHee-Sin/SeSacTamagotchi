@@ -23,7 +23,11 @@ extension UILabel {
     func setBoldFont() {
         self.font = .systemFont(ofSize: 15, weight: .bold)
         self.textColor = .seSacLabelBorder
-
+    }
+    
+    func setCustomFont(size: FontSize) {
+        self.font = UIFont.setCustomFont(size: size)
+        self.textColor = .seSacLabelBorder
     }
     
     func setBorder() {

@@ -20,7 +20,7 @@ class SelectTamagotchiCollectionViewCell: UICollectionViewCell {
         self.contentView.backgroundColor = .seSacBackground
         
         nameLabel.setBorder()
-        nameLabel.setDefaultFont()
+        nameLabel.setCustomFont(size: .s)
     
         tamagotchiImageView.image = UIImage(named: data.imageString)
         nameLabel.text = data.type.description

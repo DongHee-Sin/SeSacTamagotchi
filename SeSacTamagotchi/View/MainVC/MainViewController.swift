@@ -74,15 +74,6 @@ class MainViewController: UIViewController {
     }
     
     
-    deinit {
-//        UserDefaultManager.shared.tamagotchi = tamagotchiManager.tamagotchiInstance
-//        UserDefaultManager.shared.userName = tamagotchiManager.userName
-//        UserDefaultManager.shared.isDataStored = true
-//
-//        NotificationManager.shared.sendNotification()
-    }
-    
-    
     
     // MARK: - Methods
     func configureInitialUI() {
@@ -133,10 +124,9 @@ class MainViewController: UIViewController {
     
     func setNavigationBar() {
         let barButton = UIBarButtonItem(image: UIImage(systemName: "person.circle"), style: .plain, target: self, action: #selector(settingButtonTapped))
-        self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.seSacLabelBorder]
+        self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.seSacLabelBorder, NSAttributedString.Key.font: UIFont.setCustomFont(size: .l)]
         barButton.tintColor = .seSacLabelBorder
         self.navigationItem.rightBarButtonItem = barButton
-
         let navigationBarAppearance = UINavigationBarAppearance()
         navigationBarAppearance.backgroundColor = .seSacBackground
         navigationController?.navigationBar.scrollEdgeAppearance = navigationBarAppearance
@@ -145,11 +135,11 @@ class MainViewController: UIViewController {
     
     func setLabel() {
         speechBubbleLabel.text = tamagotchiManager.getSpeechBubbleText()
-        speechBubbleLabel.setDefaultFont()
+        speechBubbleLabel.setCustomFont(size: .s)
         speechBubbleLabel.numberOfLines = 0
         speechBubbleLabel.textAlignment = .center
         
-        nameLabel.setBoldFont()
+        nameLabel.setCustomFont(size: .l)
         nameLabel.setBorder()
         nameLabel.text = tamagotchiManager.tamagotchiName
         nameLabel.backgroundColor = .seSacDeepBackground

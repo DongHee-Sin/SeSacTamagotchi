@@ -46,7 +46,7 @@ class PopUpViewController: UIViewController {
             tamagotchiImageView.image = UIImage(named: tamaInfo.imageString)
             
             nameLabel.text = tamaInfo.type.description
-            nameLabel.setDefaultFont()
+            nameLabel.setCustomFont(size: .s)
             nameLabel.setBorder()
             
             tamagotchiDescriptionLabel.text = tamaInfo.description

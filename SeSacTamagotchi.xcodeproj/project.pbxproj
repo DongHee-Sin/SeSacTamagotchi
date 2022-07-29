@@ -15,6 +15,8 @@
 		D04DDC9C288AC739000A27A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D04DDC9B288AC739000A27A0 /* Main.storyboard */; };
 		D04DDC9E288ACB9C000A27A0 /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04DDC9D288ACB9C000A27A0 /* UserDefaultManager.swift */; };
 		D05429762893C15B0040DBEC /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05429752893C15B0040DBEC /* NotificationManager.swift */; };
+		D05429792893CBB10040DBEC /* HBIOS-SYS.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D05429782893CBB10040DBEC /* HBIOS-SYS.ttf */; };
+		D054297B2893CE0E0040DBEC /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D054297A2893CE0E0040DBEC /* UIFont+Extension.swift */; };
 		D07F7F6B288BA1DF00D38C78 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D07F7F6A288BA1DF00D38C78 /* Setting.storyboard */; };
 		D07F7F6D288BA20300D38C78 /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07F7F6C288BA20300D38C78 /* SettingTableViewController.swift */; };
 		D07F7F70288BA24600D38C78 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07F7F6F288BA24600D38C78 /* SettingTableViewCell.swift */; };
@@ -45,6 +47,8 @@
 		D04DDC9B288AC739000A27A0 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		D04DDC9D288ACB9C000A27A0 /* UserDefaultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultManager.swift; sourceTree = "<group>"; };
 		D05429752893C15B0040DBEC /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		D05429782893CBB10040DBEC /* HBIOS-SYS.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HBIOS-SYS.ttf"; sourceTree = "<group>"; };
+		D054297A2893CE0E0040DBEC /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 		D07F7F6A288BA1DF00D38C78 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		D07F7F6C288BA20300D38C78 /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
 		D07F7F6F288BA24600D38C78 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
@@ -88,6 +92,14 @@
 				D04DDC93288AAFC4000A27A0 /* PopUpViewController.swift */,
 			);
 			path = PopUpVC;
+			sourceTree = "<group>";
+		};
+		D05429772893CB950040DBEC /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				D05429782893CBB10040DBEC /* HBIOS-SYS.ttf */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 		D07F7F6E288BA21400D38C78 /* SettingVC */ = {
@@ -157,6 +169,7 @@
 		D0F3704F288A6E0E00E01182 /* SeSacTamagotchi */ = {
 			isa = PBXGroup;
 			children = (
+				D05429772893CB950040DBEC /* Resource */,
 				D0F3706B288A723000E01182 /* LifeCycle */,
 				D08520AA288C3F9C00A4EC3D /* View */,
 				D0F37070288A8DD400E01182 /* Model-Manager */,
@@ -176,6 +189,7 @@
 				D0F3706E288A876D00E01182 /* UIColor+Extension.swift */,
 				D04DDC96288AB71F000A27A0 /* UIView+Extension.swift */,
 				D082FF52288AF2DA00BE065D /* UIViewController+Extension.swift */,
+				D054297A2893CE0E0040DBEC /* UIFont+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -279,6 +293,7 @@
 			files = (
 				D0F3705D288A6E0F00E01182 /* LaunchScreen.storyboard in Resources */,
 				D04DDC9C288AC739000A27A0 /* Main.storyboard in Resources */,
+				D05429792893CBB10040DBEC /* HBIOS-SYS.ttf in Resources */,
 				D0CF14AD288BBB32006BFBE2 /* Rename.storyboard in Resources */,
 				D0F3705A288A6E0F00E01182 /* Assets.xcassets in Resources */,
 				D0F37058288A6E0E00E01182 /* Selection.storyboard in Resources */,
@@ -312,6 +327,7 @@
 				D05429762893C15B0040DBEC /* NotificationManager.swift in Sources */,
 				D04DDC94288AAFC4000A27A0 /* PopUpViewController.swift in Sources */,
 				D04DDC97288AB71F000A27A0 /* UIView+Extension.swift in Sources */,
+				D054297B2893CE0E0040DBEC /* UIFont+Extension.swift in Sources */,
 				D0F37053288A6E0E00E01182 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
