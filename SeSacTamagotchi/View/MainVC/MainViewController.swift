@@ -24,7 +24,7 @@ protocol UserNameDelegate {
 class MainViewController: UIViewController {
 
     // MARK: - Property
-    let tamagotchiManager = TamagotchiDataManager()
+    let tamagotchiManager = TamagotchiDataManager.shared
     
     
     
@@ -143,7 +143,6 @@ class MainViewController: UIViewController {
         setImage()
         updateTamagotchiInfoLabel()
         speechBubbleLabel.text = tamagotchiManager.getSpeechBubbleText()
-        UserDefaultManager.shared.tamagotchi = tamagotchiManager.tamagotchiInstance
     }
     
     
@@ -198,7 +197,6 @@ extension MainViewController: UserNameDelegate {
     
     func changeUserName(to newName: String) {
         tamagotchiManager.changeUserName(to: newName)
-        UserDefaultManager.shared.userName = newName
     }
     
 }

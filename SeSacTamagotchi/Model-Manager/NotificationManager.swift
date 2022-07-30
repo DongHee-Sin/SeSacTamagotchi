@@ -15,7 +15,7 @@ class NotificationManager {
     
     private init() {}
     
-    let notification = UNUserNotificationCenter.current()
+    private let notification = UNUserNotificationCenter.current()
     
     func requestAuthorization() {
         let authorizationOptions = UNAuthorizationOptions(arrayLiteral: [.alert, .badge, .sound])

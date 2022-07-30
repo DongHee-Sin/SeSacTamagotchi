@@ -58,7 +58,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // to restore the scene back to its current state.
         NotificationManager.shared.removeAllNotification()
         NotificationManager.shared.sendNotification()
-
+        TamagotchiDataManager.shared.saveUserData()
     }
     
 

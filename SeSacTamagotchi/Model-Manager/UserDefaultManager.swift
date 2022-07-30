@@ -62,7 +62,7 @@ struct UserDefault<T> {
 
 // 시뮬레이터에서 저장이 잘 안되는 문제 발생.. 폰으로 빌드하면 잘 저장됨...
 class UserDefaultManager {
-    static var shared = UserDefaultManager()
+    static let shared = UserDefaultManager()
     
     private init() {}
     
@@ -72,11 +72,7 @@ class UserDefaultManager {
     
     
     @UserDefault(key: UserDefaultsKey.tamagotchi.rawValue, defaultValue: Tamagochi(type: .none))
-    var tamagotchi: Tamagochi {
-        didSet {
-            isDataStored = true
-        }
-    }
+    var tamagotchi: Tamagochi
     
     
     @UserDefault(key: UserDefaultsKey.isDataStored.rawValue, defaultValue: false)

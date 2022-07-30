@@ -24,6 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         NotificationManager.shared.removeAllNotification()
         NotificationManager.shared.sendNotification()
+        TamagotchiDataManager.shared.saveUserData()
     }
     
 

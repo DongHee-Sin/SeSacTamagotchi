@@ -35,6 +35,8 @@ struct Tamagochi: Codable {
 class TamagotchiDataManager {
     
     // MARK: - Propertys
+    static let shared = TamagotchiDataManager()
+    
     private var tamagochi: Tamagochi
     private var _userName: String
     
@@ -49,7 +51,7 @@ class TamagotchiDataManager {
     
     
     // MARK: - Init
-    init() {
+    private init() {
         self.tamagochi = UserDefaultManager.shared.tamagotchi
         self._userName = UserDefaultManager.shared.userName
     }
@@ -142,5 +144,15 @@ class TamagotchiDataManager {
         }
         
         return speechBubbleList.randomElement() ?? "저런,, 기본값 말풍선이 나왔네요. 뭐가 문제인지 찾아보세요."
+    }
+    
+    
+    func saveUserData() {
+        let dataManager = UserDefaultManager.shared
+        guard dataManager.isDataStored else {
+            return
+        }
+        dataManager.tamagotchi = tamagochi
+        dataManager.userName = userName
     }
 }

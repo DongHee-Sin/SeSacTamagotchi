@@ -98,6 +98,8 @@ class PopUpViewController: UIViewController {
         
         let navi = UINavigationController(rootViewController: vc)
         
+        UserDefaultManager.shared.isDataStored = true
+        
         changeRootViewController(to: navi)
     }
 }
