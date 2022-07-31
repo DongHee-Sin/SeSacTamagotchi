@@ -7,6 +7,15 @@
 
 import UIKit
 
+
+protocol CommonSettings {
+    static var identifier: String { get }
+    
+    func configureInitialUI()
+}
+
+
+
 protocol PresentAlertDelegate {
     func presentAlert(message: String)
 }
@@ -21,10 +30,12 @@ protocol UserNameDelegate {
 
 
 
-class MainViewController: UIViewController {
+class MainViewController: UIViewController, CommonSettings {
 
     // MARK: - Property
     let tamagotchiManager = TamagotchiDataManager.shared
+    
+    static let identifier: String = "MainViewController"
     
     
     
@@ -164,8 +175,8 @@ class MainViewController: UIViewController {
     
     
     @objc func settingButtonTapped() {
-        let sb = UIStoryboard(name: "Setting", bundle: nil)
-        guard let vc = sb.instantiateViewController(withIdentifier: "SettingTableViewController") as? SettingTableViewController else {
+        let sb = UIStoryboard.setting
+        guard let vc = sb.instantiateViewController(withIdentifier: SettingTableViewController.identifier) as? SettingTableViewController else {
             self.view.makeToast("화면 전환 오류", duration: 1, position: .bottom)
             return
         }

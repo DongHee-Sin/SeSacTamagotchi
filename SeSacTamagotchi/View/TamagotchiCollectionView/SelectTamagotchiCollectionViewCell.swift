@@ -9,6 +9,8 @@ import UIKit
 
 class SelectTamagotchiCollectionViewCell: UICollectionViewCell {
     
+    static let identifier: String = "SelectTamagotchiCollectionViewCell"
+    
     // MARK: - Outlet
     @IBOutlet weak var tamagotchiImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!

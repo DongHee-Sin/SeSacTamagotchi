@@ -7,12 +7,14 @@
 
 import UIKit
 
-class SettingTableViewController: UITableViewController {
+class SettingTableViewController: UITableViewController, CommonSettings {
 
     // MARK: - Propertys
     var dataManager = SettingTableViewManager()
     
     var delegate: UserNameDelegate?
+    
+    static let identifier: String = "SettingTableViewController"
     
     
     
@@ -21,13 +23,6 @@ class SettingTableViewController: UITableViewController {
         super.viewDidLoad()
         
         configureInitialUI()
-    }
-
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        tableView.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .none)
     }
     
     
@@ -51,19 +46,22 @@ class SettingTableViewController: UITableViewController {
     
     
     func renameButtonTapped() {
-        let sb = UIStoryboard(name: "Rename", bundle: nil)
-        guard let vc = sb.instantiateViewController(withIdentifier: "RenameViewController") as? RenameViewController else {
+        let sb = UIStoryboard.rename
+        guard let vc = sb.instantiateViewController(withIdentifier: RenameViewController.identifier) as? RenameViewController else {
             self.view.makeToast("화면 전환 오류", duration: 1, position: .bottom)
             return
         }
         vc.delegate = self.delegate
+        vc.cellUpdate = { [unowned self] in
+            tableView.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .none)
+        }
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
     
     func changeTamagotchiButtonTapped() {
-        let sb = UIStoryboard(name: "Selection", bundle: nil)
-        guard let vc = sb.instantiateViewController(withIdentifier: "SelectTamagotchiCollectionViewController") as? SelectTamagotchiCollectionViewController else {
+        let sb = UIStoryboard.selection
+        guard let vc = sb.instantiateViewController(withIdentifier: SelectTamagotchiCollectionViewController.identifier) as? SelectTamagotchiCollectionViewController else {
             self.view.makeToast("화면 전환 오류", duration: 1, position: .bottom)
             return
         }
@@ -78,8 +76,8 @@ class SettingTableViewController: UITableViewController {
         let yesAction = UIAlertAction(title: "웅", style: .default) {_ in
             UserDefaultManager.shared.resetAllData()
             
-            let sb = UIStoryboard(name: "Selection", bundle: nil)
-            guard let vc = sb.instantiateViewController(withIdentifier: "SelectTamagotchiCollectionViewController") as? SelectTamagotchiCollectionViewController else {
+            let sb = UIStoryboard.selection
+            guard let vc = sb.instantiateViewController(withIdentifier: SelectTamagotchiCollectionViewController.identifier) as? SelectTamagotchiCollectionViewController else {
                 self.view.makeToast("화면 전환 오류", duration: 1, position: .bottom)
                 return
             }

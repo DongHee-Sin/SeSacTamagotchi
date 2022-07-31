@@ -8,12 +8,14 @@
 import UIKit
 
 
-class PopUpViewController: UIViewController {
+class PopUpViewController: UIViewController, CommonSettings {
 
     // MARK: - Propertys
     var tamagotchiInfo: TamagotchiCellInfo?
     
     var viewStatus: ViewStatus?
+    
+    static let identifier: String = "PopUpViewController"
     
     
     
@@ -86,8 +88,8 @@ class PopUpViewController: UIViewController {
     
     
     @IBAction func startButtonTapped(_ sender: UIButton) {
-        let sb = UIStoryboard(name: "Main", bundle: nil)
-        guard let vc = sb.instantiateViewController(withIdentifier: "MainViewController") as? MainViewController else {
+        let sb = UIStoryboard.main
+        guard let vc = sb.instantiateViewController(withIdentifier: MainViewController.identifier) as? MainViewController else {
             self.view.makeToast("화면 전환 오류", duration: 1, position: .bottom)
             return
         }

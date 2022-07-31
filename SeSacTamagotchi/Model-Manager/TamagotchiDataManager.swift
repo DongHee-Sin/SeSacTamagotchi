@@ -84,18 +84,14 @@ class TamagotchiDataManager {
         
         let energyValue = (Double(tamagochi.rice) / 5) + (Double(tamagochi.water) / 2)
         
-        switch energyValue {
-        case 0..<20: tamagochi.level = 1
-        case 20..<30: tamagochi.level = 2
-        case 30..<40: tamagochi.level = 3
-        case 40..<50: tamagochi.level = 4
-        case 50..<60: tamagochi.level = 5
-        case 60..<70: tamagochi.level = 6
-        case 70..<80: tamagochi.level = 7
-        case 80..<90: tamagochi.level = 8
-        case 90..<100: tamagochi.level = 9
-        case 100...: tamagochi.level = 10
-        default: break
+        let level = Int(energyValue / 10)
+        
+        if 1...10 ~= level {
+            tamagochi.level = level
+        }else if level < 1 {
+            tamagochi.level = 1
+        }else {
+            print("Level 계산 오류")
         }
     }
     

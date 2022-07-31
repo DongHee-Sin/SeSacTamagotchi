@@ -15,12 +15,14 @@ enum ViewStatus {
 }
 
 
-class SelectTamagotchiCollectionViewController: UICollectionViewController {
+class SelectTamagotchiCollectionViewController: UICollectionViewController, CommonSettings {
     
     // MARK: - Propertys
     var dataManager = TamagotchiCollectionViewManager()
     
     var viewStatus: ViewStatus?
+    
+    static let identifier: String = "SelectTamagotchiCollectionViewController"
     
     
     
@@ -62,7 +64,7 @@ extension SelectTamagotchiCollectionViewController {
     
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SelectTamagotchiCollectionViewCell", for: indexPath) as? SelectTamagotchiCollectionViewCell else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SelectTamagotchiCollectionViewCell.identifier, for: indexPath) as? SelectTamagotchiCollectionViewCell else {
             return UICollectionViewCell()
         }
         
@@ -78,8 +80,8 @@ extension SelectTamagotchiCollectionViewController {
             return
         }
         
-        let sb = UIStoryboard(name: "PopUp", bundle: nil)
-        guard let vc = sb.instantiateViewController(withIdentifier: "PopUpViewController") as? PopUpViewController else {
+        let sb = UIStoryboard.popUp
+        guard let vc = sb.instantiateViewController(withIdentifier: PopUpViewController.identifier) as? PopUpViewController else {
             self.view.makeToast("화면 전환 오류", duration: 1, position: .bottom)
             return
         }

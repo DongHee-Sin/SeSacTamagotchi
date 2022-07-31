@@ -7,10 +7,14 @@
 
 import UIKit
 
-class RenameViewController: UIViewController {
+class RenameViewController: UIViewController, CommonSettings {
 
     // MARK: - Propertys
     var delegate: UserNameDelegate?
+    
+    var cellUpdate: (() -> Void)?
+    
+    static let identifier: String = "RenameViewController"
     
     
     
@@ -67,6 +71,7 @@ class RenameViewController: UIViewController {
     @objc func saveButtonTapped() {
         if let newName = renameTextField.text, 2...6 ~= newName.count {
             delegate?.changeUserName(to: newName)
+            if let cellUpdate = cellUpdate { cellUpdate() }
             popButtonTapped()
         }else {
             let alertController = UIAlertController(title: "이름 규칙을 확인해주세요", message: "2~6글자 사이의 이름만 사용할 수 있습니다", preferredStyle: .alert)

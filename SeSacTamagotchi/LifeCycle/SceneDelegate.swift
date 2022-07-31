@@ -17,17 +17,19 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: scene)
         
         if UserDefaultManager.shared.isDataStored {
-            let sb = UIStoryboard(name: "Main", bundle: nil)
-            guard let vc = sb.instantiateViewController(withIdentifier: "MainViewController") as? MainViewController else { return }
+            let sb = UIStoryboard.main
+            guard let vc = sb.instantiateViewController(withIdentifier: MainViewController.identifier) as? MainViewController else { return }
             let navi = UINavigationController(rootViewController: vc)
             window?.rootViewController = navi
         }else {
-            let sb = UIStoryboard(name: "Selection", bundle: nil)
-            guard let vc = sb.instantiateViewController(withIdentifier: "SelectTamagotchiCollectionViewController") as? SelectTamagotchiCollectionViewController else { return }
+            let sb = UIStoryboard.selection
+            guard let vc = sb.instantiateViewController(withIdentifier: SelectTamagotchiCollectionViewController.identifier) as? SelectTamagotchiCollectionViewController else { return }
             vc.viewStatus = .initialView
             let navi = UINavigationController(rootViewController: vc)
-            window?.rootViewController = navi
+            window?.rootViewController = navi              
         }
+        
+        window?.makeKeyAndVisible()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
