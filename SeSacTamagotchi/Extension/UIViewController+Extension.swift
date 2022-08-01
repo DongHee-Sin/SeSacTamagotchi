@@ -7,8 +7,19 @@
 
 import UIKit
 
+@objc
+protocol CommonSettings {
+    static var identifier: String { get }
+    
+    @objc optional func configureInitialUI()
+}
 
-extension UIViewController {
+
+
+extension UIViewController: CommonSettings {
+    
+    static var identifier: String { String(describing: self) }
+    
     func changeRootViewController(to rootVC: UIViewController) {
         let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
         let sceneDelegate = windowScene?.delegate as? SceneDelegate

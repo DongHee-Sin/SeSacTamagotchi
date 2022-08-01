@@ -7,15 +7,6 @@
 
 import UIKit
 
-
-protocol CommonSettings {
-    static var identifier: String { get }
-    
-    func configureInitialUI()
-}
-
-
-
 protocol PresentAlertDelegate {
     func presentAlert(message: String)
 }
@@ -30,12 +21,10 @@ protocol UserNameDelegate {
 
 
 
-class MainViewController: UIViewController, CommonSettings {
+class MainViewController: UIViewController {
 
     // MARK: - Property
     let tamagotchiManager = TamagotchiDataManager.shared
-    
-    static let identifier: String = "MainViewController"
     
     
     

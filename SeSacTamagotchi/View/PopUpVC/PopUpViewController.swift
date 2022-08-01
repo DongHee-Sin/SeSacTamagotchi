@@ -8,14 +8,12 @@
 import UIKit
 
 
-class PopUpViewController: UIViewController, CommonSettings {
+class PopUpViewController: UIViewController {
 
     // MARK: - Propertys
     var tamagotchiInfo: TamagotchiCellInfo?
     
     var viewStatus: ViewStatus?
-    
-    static let identifier: String = "PopUpViewController"
     
     
     

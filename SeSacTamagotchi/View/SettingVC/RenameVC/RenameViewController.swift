@@ -7,14 +7,12 @@
 
 import UIKit
 
-class RenameViewController: UIViewController, CommonSettings {
+class RenameViewController: UIViewController {
 
     // MARK: - Propertys
     var delegate: UserNameDelegate?
     
     var cellUpdate: (() -> Void)?
-    
-    static let identifier: String = "RenameViewController"
     
     
     

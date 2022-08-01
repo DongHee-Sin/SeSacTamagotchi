@@ -15,14 +15,12 @@ enum ViewStatus {
 }
 
 
-class SelectTamagotchiCollectionViewController: UICollectionViewController, CommonSettings {
+class SelectTamagotchiCollectionViewController: UICollectionViewController {
     
     // MARK: - Propertys
     var dataManager = TamagotchiCollectionViewManager()
     
     var viewStatus: ViewStatus?
-    
-    static let identifier: String = "SelectTamagotchiCollectionViewController"
     
     
     

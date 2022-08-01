@@ -7,14 +7,12 @@
 
 import UIKit
 
-class SettingTableViewController: UITableViewController, CommonSettings {
+class SettingTableViewController: UITableViewController {
 
     // MARK: - Propertys
     var dataManager = SettingTableViewManager()
     
     var delegate: UserNameDelegate?
-    
-    static let identifier: String = "SettingTableViewController"
     
     
     
@@ -104,7 +102,7 @@ extension SettingTableViewController {
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "SettingTableViewCell", for: indexPath) as? SettingTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: SettingTableViewCell.identifier, for: indexPath) as? SettingTableViewCell else {
             return UITableViewCell()
         }
 

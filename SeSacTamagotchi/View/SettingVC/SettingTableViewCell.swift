@@ -8,6 +8,8 @@
 import UIKit
 
 class SettingTableViewCell: UITableViewCell {
+    
+    static let identifier = String(describing: SettingTableViewCell.self)
 
     // MARK: - Outlet
     @IBOutlet weak var cellImageView: UIImageView!
